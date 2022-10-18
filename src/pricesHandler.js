@@ -14,13 +14,15 @@ async function getFuturesCoinsPrices() {
     let allPrices = (await api.getAllPrices()).data
     let futuresCoinsPrices = []
 
-    for (const iterator of allPrices) {
-        if (futuresCoinsList.includes(iterator.symbol)) {
-            futuresCoinsPrices.push(iterator)
+    for (const iter of futuresCoinsList) {
+        for (const price of allPrices) {
+            if (iter == price.symbol) {
+                futuresCoinsPrices.push(price)
+            }
         }
     }
 
     return futuresCoinsPrices
 }
 
-//console.log(await getFuturesCoinsPrices())
+console.log(await getFuturesCoinsPrices())
