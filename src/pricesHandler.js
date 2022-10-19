@@ -10,7 +10,7 @@ const futuresCoinsList = fs
 const { KEY, SECRET } = config.get('USER')
 const api = new Api({ KEY, SECRET })
 
-async function getFuturesCoinsPrices() {
+export async function getFuturesCoinsPrices() {
     let allPrices = (await api.getAllPrices()).data
     let futuresCoinsPrices = []
 
@@ -24,5 +24,3 @@ async function getFuturesCoinsPrices() {
 
     return futuresCoinsPrices
 }
-
-console.log(await getFuturesCoinsPrices())
