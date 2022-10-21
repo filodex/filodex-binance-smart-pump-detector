@@ -16,8 +16,11 @@ const client = new pg.Client({
     password: String(process.env.PGPASSWORD),
     port: 5432,
 })
+
+// main
 await client.connect()
 console.log('client connected to postgres')
+//console.log(await client.query('select btcusdt from prices'))
 
 // Functions
 export async function customQuery(text) {
@@ -40,7 +43,7 @@ export async function createPostgresPricesTable(tableName, tickers) {
 // await client.query('drop table prices')
 // createPostgresPricesTable('prices', futuresCoinsList)
 
-// prices == { symbol: 'ALGOUSDT', price: '0.31440000' }
+// prices == [{ symbol: 'ALGOUSDT', price: '0.31440000' }]
 export async function writePrices(tickerPrice) {
     if (!tickerPrice) {
         throw 'no prices obj'
