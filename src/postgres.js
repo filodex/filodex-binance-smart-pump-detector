@@ -62,5 +62,5 @@ export async function writePrices(tickerPrice) {
     )
     let res = await client.query('select date_ms, date_full from prices')
 
-    console.log(res.rows)
+    // console.log(res.rows)
 }

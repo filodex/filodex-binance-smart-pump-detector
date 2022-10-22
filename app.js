@@ -3,6 +3,7 @@ console.log(chalk.blueBright('app.js has been started...'))
 import {
     getFuturesCoinsPrices,
     activatePricesWriter,
+    findGreatestDeviations,
 } from './src/pricesHandler.js'
 import { writePrices } from './src/postgres.js'
 import chalk from 'chalk'
@@ -26,11 +27,15 @@ app.use('/api/prices', prices_router)
 //await startExpress()
 
 let pricesWriter = await activatePricesWriter()
-pricesWriter.pricesHandlerEmitter.on('intervalEnded', (prices) => {})
+pricesWriter.pricesHandlerEmitter.on('intervalEnded', async (prices) => {
+    let greatestDeviations = await findGreatestDeviations(prices)
+})
 
 //axios.get('http://127.0.0.1:5000/api/prices/lastknown', {})
 
 // functions
+
+//do not use, prices are writing in pricesHandler
 async function writeActualPricesToTable() {
     let futuresCoinsPrices = await getFuturesCoinsPrices()
 
