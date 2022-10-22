@@ -59,6 +59,7 @@ export async function activatePricesWriter() {
 
 //priceTicker == [{symbol:,price:},{}]
 // return {1min:[{ticker:'',deviation:''}.{}],3min:[]}
+// pricesStore_frozen == [[{symbol:,price:},{}],[]]
 export async function findGreatestDeviations(pricesStore_frozen) {
     if (pricesStore_frozen.length < 3) {
         console.log(
@@ -72,20 +73,49 @@ export async function findGreatestDeviations(pricesStore_frozen) {
         return
     }
 
+    // lastPrices == [{symbol:,price:},{}]
     let lastPrices = pricesStore_frozen[pricesStore_frozen.length - 1]
     let prev1MinPrices = pricesStore_frozen[pricesStore_frozen.length - 2]
-    console.log('last prices    ------')
+    let prev3MinPrices = pricesStore_frozen[pricesStore_frozen.length - 4]
+    // console.log('last prices    ------')
 
     let deviations_1min = []
-    console.log('last prices 0!!', lastPrices[0])
+    let deviations_3min = []
+
+    // console.log('last prices 0!!', lastPrices[0])
+    // console.log('last prices 1!!', lastPrices[1])
+    // console.log('prev1MinPrices 0!!', lastPrices[0])
 
     //1min
     for (const i in lastPrices) {
-        let deviation = (lastPrices[i].price / prev1MinPrices[i] - 1) * 100
-        deviations_1min.push({ ticker: lastPrices[i].symbol, deviation })
+        let deviation =
+            (Number(lastPrices[i].price) / Number(prev1MinPrices[i].price) -
+                1) *
+            100
+        deviations_1min.push({
+            ticker: lastPrices[i].symbol,
+            deviation,
+            lastPrice: lastPrices[i].price,
+            prev1MinPrice: prev1MinPrices[i].price,
+        })
     }
     console.log('deviations_1min', deviations_1min)
-    //(b/a-1)*100
-    //pricesStore_frozen[pricesStore_frozen.length-1]
-    //как то сравнить каждую цену с каждой
+
+    //3min
+    if (prev3MinPrices) {
+        for (const i in lastPrices) {
+            let deviation =
+                (Number(lastPrices[i].price) / Number(prev3MinPrices[i].price) -
+                    1) *
+                100
+            deviations_3min.push({
+                ticker: lastPrices[i].symbol,
+                deviation,
+                lastPrice: lastPrices[i].price,
+                prev3MinPrice: prev3MinPrices[i].price,
+            })
+        }
+    }
+
+    console.log('deviations_3min', deviations_3min)
 }
