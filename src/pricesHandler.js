@@ -77,10 +77,12 @@ export async function findGreatestDeviations(pricesStore_frozen) {
     let lastPrices = pricesStore_frozen[pricesStore_frozen.length - 1]
     let prev1MinPrices = pricesStore_frozen[pricesStore_frozen.length - 2]
     let prev3MinPrices = pricesStore_frozen[pricesStore_frozen.length - 4]
+    let prev5MinPrices = pricesStore_frozen[pricesStore_frozen.length - 6]
     // console.log('last prices    ------')
 
     let deviations_1min = []
     let deviations_3min = []
+    let deviations_5min = []
 
     // console.log('last prices 0!!', lastPrices[0])
     // console.log('last prices 1!!', lastPrices[1])
@@ -117,5 +119,21 @@ export async function findGreatestDeviations(pricesStore_frozen) {
         }
     }
 
-    console.log('deviations_3min', deviations_3min)
+    //5min
+    if (prev5MinPrices) {
+        for (const i in lastPrices) {
+            let deviation =
+                (Number(lastPrices[i].price) / Number(prev5MinPrices[i].price) -
+                    1) *
+                100
+            deviations_5min.push({
+                ticker: lastPrices[i].symbol,
+                deviation,
+                lastPrice: lastPrices[i].price,
+                prev5MinPrice: prev5MinPrices[i].price,
+            })
+        }
+    }
+
+    console.log('deviations_5min', deviations_5min)
 }
