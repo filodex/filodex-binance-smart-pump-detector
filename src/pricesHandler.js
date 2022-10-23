@@ -35,7 +35,9 @@ export async function getFuturesCoinsPrices() {
 //pricesHandler раз в минуту получит цены, запишет в тиблицу и сохранит себе, чтоб потом сравнить
 
 export async function activatePricesWriter() {
-    console.log(chalk.blueBright('interval started'))
+    console.log(
+        chalk.blueBright('main interval of getting and writing prices started')
+    )
     let oneMinuteInterval = setInterval(async () => {
         if (pricesStore.length > 20) {
             pricesStore.shift()
@@ -48,7 +50,7 @@ export async function activatePricesWriter() {
         pricesStore.push(prices)
         pricesHandlerEmitter.emit('intervalEnded', pricesStore)
 
-        console.log(chalk.bgBlue('prices---------'), prices[0])
+        // console.log(chalk.bgBlue('prices---------'), prices[0])
         console.log(chalk.blueBright('interval ended'))
     }, 60000)
     return {
@@ -66,10 +68,10 @@ export async function findGreatestDeviations(pricesStore_frozen) {
             chalk.bgBlueBright('not enough prices to compare, length=='),
             pricesStore_frozen.length
         )
-        console.log(
-            chalk.red('pricesStore_frozen------------'),
-            pricesStore_frozen
-        )
+        // console.log(
+        //     // chalk.red('pricesStore_frozen------------'),
+        //     pricesStore_frozen
+        // )
         return
     }
 
@@ -78,15 +80,18 @@ export async function findGreatestDeviations(pricesStore_frozen) {
     let prev1MinPrices = pricesStore_frozen[pricesStore_frozen.length - 2]
     let prev3MinPrices = pricesStore_frozen[pricesStore_frozen.length - 4]
     let prev5MinPrices = pricesStore_frozen[pricesStore_frozen.length - 6]
+    let prev10MinPrices = pricesStore_frozen[pricesStore_frozen.length - 11]
+    let prev15MinPrices = pricesStore_frozen[pricesStore_frozen.length - 16]
     // console.log('last prices    ------')
 
+    //deviations_1min == [{ticker,deviation...},{}]
     let deviations_1min = []
     let deviations_3min = []
     let deviations_5min = []
+    let deviations_10min = calcDeviations(lastPrices, prev10MinPrices)
+    let deviations_15min = calcDeviations(lastPrices, prev15MinPrices)
 
-    // console.log('last prices 0!!', lastPrices[0])
-    // console.log('last prices 1!!', lastPrices[1])
-    // console.log('prev1MinPrices 0!!', lastPrices[0])
+    let greatest10_1min = findTop10Deviations(deviations_1min)
 
     //1min
     for (const i in lastPrices) {
@@ -101,7 +106,7 @@ export async function findGreatestDeviations(pricesStore_frozen) {
             prev1MinPrice: prev1MinPrices[i].price,
         })
     }
-    console.log('deviations_1min', deviations_1min)
+    //console.log('deviations_1min', deviations_1min)
 
     //3min
     if (prev3MinPrices) {
@@ -135,5 +140,45 @@ export async function findGreatestDeviations(pricesStore_frozen) {
         }
     }
 
-    console.log('deviations_5min', deviations_5min)
+    //console.log('deviations_5min', deviations_5min)
+    function calcDeviations(lastPrices, prevPrices) {
+        if (!prevPrices) {
+            console.log('no prevPrices ', prevPrices)
+            return
+        }
+        let deviations = []
+        for (const i in lastPrices) {
+            let deviation =
+                (Number(lastPrices[i].price) / Number(prevPrices[i].price) -
+                    1) *
+                100
+            deviations.push({
+                ticker: lastPrices[i].symbol,
+                deviation,
+                lastPrice: lastPrices[i].price,
+                prevPrice: prevPrices[i].price,
+            })
+        }
+
+        return deviations
+    }
+
+    function findTop10Deviations(deviations) {
+        console.log('findTop10Deviations started')
+        console.log('deviations: ', deviations)
+        //deviations == [{ticker,deviation},{}]
+        let sorted = deviations.sort((a, b) => {
+            if (a.deviation > b.deviation) {
+                return -1
+            }
+            if (a.deviation < b.deviation) {
+                return 1
+            }
+            return 0
+        })
+        console.log('sorted: ', sorted)
+        return sorted.slice(0, 9)
+    }
+
+    return { '1min': greatest10_1min, '3min': [] }
 }

@@ -26,9 +26,13 @@ app.use('/api/prices', prices_router)
 // main
 //await startExpress()
 
+// Сначала запускаю цикл, в котором получаю все цены на все фьючи раз в минуту,
+// Затем каждую минуту, когда цены получены вызываю событие intervalEnded, вместе с которым получаю массив prices [[{},{}],[]]
+// Этот массив имеет макс. длину 20, и сожержит массивы с ценами за каждую минуту
 let pricesWriter = await activatePricesWriter()
 pricesWriter.pricesHandlerEmitter.on('intervalEnded', async (prices) => {
     let greatestDeviations = await findGreatestDeviations(prices)
+    console.log(greatestDeviations)
 })
 
 //axios.get('http://127.0.0.1:5000/api/prices/lastknown', {})
