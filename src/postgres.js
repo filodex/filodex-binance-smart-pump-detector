@@ -18,8 +18,12 @@ const client = new pg.Client({
 })
 
 // main
-await client.connect()
-console.log('client connected to postgres')
+try {
+    await client.connect()
+    console.log('client connected to postgres')
+} catch (error) {
+    console.log('cant connect to postgres, ', error)
+}
 //console.log(await client.query('select btcusdt from prices'))
 
 // Functions

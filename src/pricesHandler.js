@@ -44,7 +44,14 @@ export async function activatePricesWriter() {
         }
         // prices - [{},{}]
         let prices = await getFuturesCoinsPrices()
-        writePrices(prices)
+        try {
+            if (config.get('WriteToPG')) {
+                writePrices(prices)
+            }
+        } catch (error) {
+            console.log(error)
+        }
+
         let date = new Date()
         prices.date = date
         pricesStore.push(prices)
@@ -90,8 +97,6 @@ export async function findGreatestDeviations(pricesStore_frozen) {
     let deviations_5min = []
     let deviations_10min = calcDeviations(lastPrices, prev10MinPrices)
     let deviations_15min = calcDeviations(lastPrices, prev15MinPrices)
-
-    let greatest10_1min = findTop10Deviations(deviations_1min)
 
     //1min
     for (const i in lastPrices) {
@@ -140,10 +145,16 @@ export async function findGreatestDeviations(pricesStore_frozen) {
         }
     }
 
+    let greatest10_1min = findTop10Deviations(deviations_1min)
+    let greatest10_3min = findTop10Deviations(deviations_3min)
+    let greatest10_5min = findTop10Deviations(deviations_5min)
+    let greatest10_10min = findTop10Deviations(deviations_10min)
+    let greatest10_15min = findTop10Deviations(deviations_15min)
+
     //console.log('deviations_5min', deviations_5min)
     function calcDeviations(lastPrices, prevPrices) {
         if (!prevPrices) {
-            console.log('no prevPrices ', prevPrices)
+            //  console.log('no prevPrices ', prevPrices)
             return
         }
         let deviations = []
@@ -164,8 +175,9 @@ export async function findGreatestDeviations(pricesStore_frozen) {
     }
 
     function findTop10Deviations(deviations) {
-        console.log('findTop10Deviations started')
-        console.log('deviations: ', deviations)
+        if (!deviations) {
+            return []
+        }
         //deviations == [{ticker,deviation},{}]
         let sorted = deviations.sort((a, b) => {
             if (a.deviation > b.deviation) {
@@ -176,9 +188,15 @@ export async function findGreatestDeviations(pricesStore_frozen) {
             }
             return 0
         })
-        console.log('sorted: ', sorted)
-        return sorted.slice(0, 9)
+        //console.log('sorted: ', sorted)
+        return sorted.slice(0, 10)
     }
 
-    return { '1min': greatest10_1min, '3min': [] }
+    return {
+        '1min': greatest10_1min,
+        '3min': greatest10_3min,
+        '5min': greatest10_5min,
+        '10min': greatest10_10min,
+        '15min': greatest10_15min,
+    }
 }

@@ -32,7 +32,7 @@ app.use('/api/prices', prices_router)
 let pricesWriter = await activatePricesWriter()
 pricesWriter.pricesHandlerEmitter.on('intervalEnded', async (prices) => {
     let greatestDeviations = await findGreatestDeviations(prices)
-    console.log(greatestDeviations)
+    console.log('greatest deviations in app.js', greatestDeviations)
 })
 
 //axios.get('http://127.0.0.1:5000/api/prices/lastknown', {})
