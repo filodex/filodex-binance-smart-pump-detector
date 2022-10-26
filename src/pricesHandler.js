@@ -1,3 +1,6 @@
+/**
+ * В этом файле делаю всеми доступными способами
+ */
 import Api from './binanceApi.js'
 import config from 'config'
 import fs from 'fs'
@@ -67,7 +70,7 @@ export async function activatePricesWriter() {
 }
 
 //priceTicker == [{symbol:,price:},{}]
-// return {1min:[{ticker:'',deviation:''}.{}],3min:[]}
+// return {1min:[up:{ticker:'',deviation:''},down:{}],[]],3min:[]}
 // pricesStore_frozen == [[{symbol:,price:},{}],[]]
 export async function findGreatestDeviations(pricesStore_frozen) {
     if (pricesStore_frozen.length < 3) {
@@ -188,8 +191,16 @@ export async function findGreatestDeviations(pricesStore_frozen) {
             }
             return 0
         })
+
+        for (const key in sorted) {
+            if (!sorted[key].deviation || sorted[key].deviation === undefined) {
+                sorted.splice(key, 1)
+            }
+        }
+
         //console.log('sorted: ', sorted)
-        return sorted.slice(0, 10)
+
+        return { up: sorted.slice(0, 10), down: sorted.slice(-10) }
     }
 
     return {
