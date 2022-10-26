@@ -11,6 +11,7 @@ router.get('/lastknown', (req, res) => {
         res.status(200).json({
             message: 'Here it is',
             data: greatestDeviations,
+            body: 'aahahah',
         })
         console.log('i got request')
     } catch (error) {
