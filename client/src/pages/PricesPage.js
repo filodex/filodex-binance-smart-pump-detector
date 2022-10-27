@@ -1,67 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Route } from 'react-router-dom'
 import { useHttp } from '../hooks/http.hook.js'
 
-class Clock extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = { date: new Date(), msg: 111 }
-    }
-
-    render() {
-        return (
-            <div>
-                <h2>{this.state.msg}</h2>
-            </div>
-        )
-    }
-}
-
-class PricesBlock extends React.Component {
-    constructor(props) {
-        super(props)
-        console.log('props', this.props.message)
-        this.state = { prices: this.props.data }
-    }
-
-    componentDidMount() {
-        //this.timerID = setInterval(() => this.tick(), 1000)
-    }
-
-    componentWillUnmount() {
-        //clearInterval(this.timerID)
-    }
-
-    render(data) {
-        console.log('rendering')
-        return (
-            <div>
-                {data}
-                aaaaa
-                <h3>{this.props.message}</h3>
-                <h2> {this.props.data}</h2>
-            </div>
-        )
-    }
+function PricesList(props) {
+    return <div>{props.prices}</div>
 }
 
 export const PricesPage = () => {
+    const [pricesValue, setPricesValue] = useState('no prices')
     const { loading, request } = useHttp()
-    const pricesHandler = async () => {
-        try {
-            const data = await request('/api/prices/lastknown')
-            //console.log(data)
-            Clock.setState({ msg: 123123 })
-        } catch (error) {}
+    const pricesHandler = () => {
+        setPricesValue('it works')
     }
-    // const PricesBlock = (prices) => {
-    //     return (
-    //         <div>
-    //             aaa
-    //             {prices.message}
-    //             {prices.data}
-    //         </div>
-    //     )
+    // const pricesHandler = async () => {
+    //     try {
+    //         const data = await request('/api/prices/lastknown')
+    //         console.log(data)
+    //         return await data.json()
+    //     } catch (error) {}
     // }
 
     return (
@@ -74,9 +30,44 @@ export const PricesPage = () => {
             >
                 Load prices
             </button>
-            <div className='pricesBlock'>
-                <Clock />
-            </div>
+            <PricesList prices={pricesValue} />
+            <div className='pricesBlock'></div>
         </div>
     )
 }
+
+//
+//
+//
+//
+//
+//
+
+// TEst
+// class PricesBlock extends React.Component {
+//     constructor(props) {
+//         super(props)
+//         console.log('props', this.props.message)
+//         this.state = { prices: this.props.data }
+//     }
+
+//     componentDidMount() {
+//         //this.timerID = setInterval(() => this.tick(), 1000)
+//     }
+
+//     componentWillUnmount() {
+//         //clearInterval(this.timerID)
+//     }
+
+//     render(data) {
+//         console.log('rendering')
+//         return (
+//             <div>
+//                 {data}
+//                 aaaaa
+//                 <h3>{this.props.message}</h3>
+//                 <h2> {this.props.data}</h2>
+//             </div>
+//         )
+//     }
+// }
