@@ -5,6 +5,8 @@
     "type": "module",
     "main": "index.js",
     "scripts": {
+        "start": "cross-env NODE_ENV=production node app.js",
+        "build": "npm run build --prefix client",
         "client": "npm run start --prefix client",
         "server": "nodemon app.js",
         "dev": "npx concurrently \"npm run server\" \"npm run client\"",

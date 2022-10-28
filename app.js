@@ -8,6 +8,7 @@ import {
 import { writePrices } from './src/postgres.js'
 import chalk from 'chalk'
 import express from 'express'
+import path from 'path'
 import config from 'config'
 import prices_router from './routes/prices.routes.js'
 import axios from 'axios'
@@ -19,11 +20,19 @@ process.on('uncaughtException', (err, origin) => {
 })
 
 let greatestDeviations = []
+const __dirname = path.resolve()
 
 //express
 const app = express()
 const PORT = config.get('PORT') || 5000
 app.use('/api/prices', prices_router)
+
+if (process.env.NODE_ENV === 'production') {
+    app.use('/', express.static(path.join(__dirname, 'client', 'build')))
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.js'))
+    })
+}
 
 // main
 await startExpress()
