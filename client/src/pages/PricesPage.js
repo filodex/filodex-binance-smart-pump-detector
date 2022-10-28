@@ -3,7 +3,6 @@ import { Route } from 'react-router-dom'
 import { useHttp } from '../hooks/http.hook.js'
 
 function PricesList(props) {
-    console.log(props)
     /**
      * BTCUSDT deviation: 1,213123
      */
@@ -43,6 +42,15 @@ function PricesList(props) {
 export const PricesPage = () => {
     const [pricesValue, setPricesValue] = useState('no prices')
     const { loading, request } = useHttp()
+
+    setInterval(async () => {
+        try {
+            const data = await request('/api/prices/lastknown')
+            console.log(data)
+            setPricesValue(data.data)
+            return
+        } catch (error) {}
+    }, 60000)
 
     const pricesHandler = async () => {
         try {
