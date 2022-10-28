@@ -42,7 +42,7 @@ export const WelcomePage = () => {
                         <p>Go to Prices</p>
                     </div>
                     <div className='card-action'>
-                        <a href='/prices'>Prices</a>
+                        <a href='/'>Prices</a>
                     </div>
                 </div>
             </div>

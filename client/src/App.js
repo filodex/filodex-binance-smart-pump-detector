@@ -11,8 +11,8 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/prices' element={<PricesPage />} />
-                <Route path='/' element={<WelcomePage />} />
+                <Route path='/welcome' element={<WelcomePage />} />
+                <Route path='/' element={<PricesPage />} />
                 <Route path='*' element={<Navigate to='/' />} />
             </Routes>
         </BrowserRouter>
