@@ -3,3 +3,16 @@
 .deviationsRow {
     width: 90% !important;
 }
+
+.page {
+    background: rgb(34, 193, 195);
+    background: linear-gradient(
+        0deg,
+        rgba(34, 193, 195, 1) 0%,
+        rgba(246, 231, 200, 1) 100%
+    );
+}
+
+.col {
+    margin: 0px 100px 10px 0px;
+}

@@ -202,10 +202,10 @@ export async function findGreatestDeviations(pricesStore_frozen) {
         let down = sorted.slice(-10).reverse()
 
         for (const iterator of up) {
-            iterator.deviation = Math.round(iterator.deviation * 10000) / 100
+            iterator.deviation = Math.round(iterator.deviation * 100) / 100
         }
         for (const iterator of down) {
-            iterator.deviation = Math.round(iterator.deviation * 10000) / 100
+            iterator.deviation = Math.round(iterator.deviation * 100) / 100
         }
 
         return { up, down }
