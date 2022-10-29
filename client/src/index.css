@@ -1,1 +1,5 @@
 @import '~materialize-css/dist/css/materialize.min.css';
+
+.deviationsRow {
+    width: 90% !important;
+}

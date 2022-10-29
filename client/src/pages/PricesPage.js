@@ -15,16 +15,23 @@ export function PricesPage() {
     const { request } = useHttp()
 
     useEffect(() => {
-        setTimeout(async () => {
+        //вставить сюда функцию
+        setInterval(async () => {
             try {
                 const data = await request('/api/prices/lastknown')
                 console.log(data)
                 let deviationsServerResponse = data.data
-                // здесь же нужно и обработать пришедший ответ и изменить состояние
-                return
+                let jsx_li_1min_up = arrWithObjToJSXList(
+                    deviationsServerResponse['1min'].up
+                )
+                let jsx_li_1min_down = arrWithObjToJSXList(
+                    deviationsServerResponse['1min'].down
+                )
+                setList_grow_1min(jsx_li_1min_up)
+                setList_fall_1min(jsx_li_1min_down)
             } catch (error) {}
         }, 60000)
-    })
+    }, [])
 
     return (
         <div className='page'>
@@ -34,8 +41,60 @@ export function PricesPage() {
                 </div>
             </div>
             <div className='row'>
-                <div className='col s6 offset-s3'>
+                <div className='col s6 offset-s3 deviationsRow'>
                     <h4>In 1 min</h4>
+                    <div className='col'>
+                        <h4>Grow</h4>
+                        <DeviationsList list={list_grow_1min} />
+                    </div>
+                    <div className='col'>
+                        <h4>Fall</h4>
+                        <DeviationsList list={list_fall_1min} />
+                    </div>
+                </div>
+            </div>
+            <div className='row'>
+                <div className='col s6 offset-s3 deviationsRow'>
+                    <h4>In 3 min</h4>
+                    <div className='col'>
+                        <h4>Grow</h4>
+                        <DeviationsList list={list_grow_1min} />
+                    </div>
+                    <div className='col'>
+                        <h4>Fall</h4>
+                        <DeviationsList list={list_fall_1min} />
+                    </div>
+                </div>
+            </div>
+            <div className='row'>
+                <div className='col s6 offset-s3 deviationsRow'>
+                    <h4>In 5 min</h4>
+                    <div className='col'>
+                        <h4>Grow</h4>
+                        <DeviationsList list={list_grow_1min} />
+                    </div>
+                    <div className='col'>
+                        <h4>Fall</h4>
+                        <DeviationsList list={list_fall_1min} />
+                    </div>
+                </div>
+            </div>
+            <div className='row'>
+                <div className='col s6 offset-s3 deviationsRow'>
+                    <h4>In 10 min</h4>
+                    <div className='col'>
+                        <h4>Grow</h4>
+                        <DeviationsList list={list_grow_1min} />
+                    </div>
+                    <div className='col'>
+                        <h4>Fall</h4>
+                        <DeviationsList list={list_fall_1min} />
+                    </div>
+                </div>
+            </div>
+            <div className='row'>
+                <div className='col s6 offset-s3 deviationsRow'>
+                    <h4>In 15 min</h4>
                     <div className='col'>
                         <h4>Grow</h4>
                         <DeviationsList list={list_grow_1min} />
@@ -48,4 +107,20 @@ export function PricesPage() {
             </div>
         </div>
     )
+}
+
+function arrWithObjToJSXList(arrWithObj) {
+    let liList = []
+    let i = 1
+
+    for (const iterator of arrWithObj) {
+        liList.push(
+            <li>
+                {i}. {iterator.ticker} deviation: {iterator.deviation}
+            </li>
+        )
+        i++
+    }
+
+    return <ul className='ulList'>{liList}</ul>
 }
