@@ -4,7 +4,7 @@ import { table } from 'console'
 
 //Initial
 const futuresCoinsList = fs
-    .readFileSync('src/Binance Futures.txt', {
+    .readFileSync('src/BinanceFutures.txt', {
         encoding: 'utf-8',
     })
     .split(',')
