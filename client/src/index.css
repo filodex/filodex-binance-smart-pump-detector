@@ -3,9 +3,10 @@
 .deviationsRow {
     width: 90% !important;
 }
-
-.page {
-    background: rgb(34, 193, 195);
+html {
+    min-height: 100%;
+}
+body {
     background: linear-gradient(
         0deg,
         rgba(34, 193, 195, 1) 0%,
@@ -14,5 +15,21 @@
 }
 
 .col {
-    margin: 0px 100px 10px 0px;
+    margin: 0px 5rem 10px 0px;
+}
+
+nav {
+    background: rgba(158, 235, 216, 0.196);
+}
+
+.brand-logo {
+    margin-left: 1rem;
+}
+
+#nav-mobile > li > a {
+    color: black;
+}
+
+#root > nav > div > a {
+    color: black;
 }

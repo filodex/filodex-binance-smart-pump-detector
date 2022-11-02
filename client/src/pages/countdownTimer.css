@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('https://images.unsplash.com/photo-1491002052546-bf38f186af56?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c25vd3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=700&q=60');
+    font-family: 'Red Hat Mono', monospace;
+    margin: 0;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: normal;
+    margin-top: 4rem;
+}
+
+.big-text {
+    font-size: 4rem;
+    line-height: 1;
+    margin: 0 2rem;
+    font-weight: bold;
+}
+
+.countdown-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+span {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.countdown-el {
+    text-align: center;
+    font-size: 2rem;
+}

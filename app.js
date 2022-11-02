@@ -26,9 +26,30 @@ const __dirname = path.resolve()
 const app = express()
 const PORT = config.get('PORT') || 5000
 app.use('/api/prices', prices_router)
+app.use(
+    '/countdowntimer',
+    express.static(path.join(__dirname, 'client', 'src', 'pages'))
+)
+app.get('/countdowntimer', (req, res) => {
+    res.sendFile(
+        path.resolve(__dirname, 'client', 'src', 'pages', 'countdowntimer.html')
+    )
+})
 
 if (process.env.NODE_ENV != 'production') {
     app.use('/', express.static(path.join(__dirname, 'client', 'build')))
+
+    app.get('/countdowntimer', (req, res) => {
+        res.sendFile(
+            path.resolve(
+                __dirname,
+                'client',
+                'src',
+                'pages',
+                'countdowntimer.html'
+            )
+        )
+    })
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
     })
