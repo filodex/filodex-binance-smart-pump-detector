@@ -30,12 +30,6 @@ app.use(
     '/countdowntimer',
     express.static(path.join(__dirname, 'client', 'src', 'pages'))
 )
-app.get('/countdowntimer', (req, res) => {
-    res.sendFile(
-        path.resolve(__dirname, 'client', 'src', 'pages', 'countdowntimer.html')
-    )
-})
-
 app.use('/', express.static(path.join(__dirname, 'client', 'build')))
 
 app.get('/countdowntimer', (req, res) => {
