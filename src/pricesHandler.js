@@ -4,7 +4,8 @@
 import Api from './binanceApi.js'
 import config from 'config'
 import fs from 'fs'
-import { writePrices } from './postgres.js'
+// РАСКОММЕНТИТЬ!!!!
+//import { writePrices } from './postgres.js'
 import chalk from 'chalk'
 import { EventEmitter } from 'events'
 
@@ -36,7 +37,6 @@ export async function getFuturesCoinsPrices() {
 }
 
 //pricesHandler раз в минуту получит цены, запишет в тиблицу и сохранит себе, чтоб потом сравнить
-
 export async function activatePricesWriter() {
     console.log(
         chalk.blueBright('main interval of getting and writing prices started')
@@ -218,4 +218,42 @@ export async function findGreatestDeviations(pricesStore_frozen) {
         '10min': greatest10_10min,
         '15min': greatest10_15min,
     }
+}
+
+export async function calcAtrForAllCoinsAndWriteToFile() {
+    /**
+     * 1. По каждой монете нужно пройтись по отдельности, получить для каждой свечи 5минутные
+     * 2. Посчитать ATR
+     * 3. записать в файл
+     */
+
+    for await (const iter of futuresCoinsList) {
+    }
+
+    // РАСЧЕТ ATR
+    // let candlesALGO = (
+    //     await api.getCandles({
+    //         symbol: 'DFUSDT',
+    //         interval: '1m',
+    //         limit: 1000,
+    //     })
+    // ).data
+
+    // // candles[0][1] - open price
+    // // candles[0][4] - close price
+    // let diff_sum = 0
+    // for (const iterator of candlesALGO) {
+    //     let o = iterator[1]
+    //     let c = iterator[4]
+    //     diff_sum += Math.abs(c - o)
+    // }
+    // let atr_abs = diff_sum / candlesALGO.length
+    // let atr_relative =
+    //     Math.floor(
+    //         ((Number(candlesALGO[candlesALGO.length - 1][4]) + atr_abs) /
+    //             Number(candlesALGO[candlesALGO.length - 1][4]) -
+    //             1) *
+    //             10000
+    //     ) / 100
+    // console.log(atr_relative)
 }

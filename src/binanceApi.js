@@ -98,11 +98,11 @@ export default function Api(opt) {
         interval = '1m',
         startTime,
         endTime,
-        limit,
+        limit = 500,
     }) => {
+        // [0] - ранняя дата [499] - поздняя дата
         let url = API_URL + '/api/v3/klines'
-        url += `?symbol=${symbol}&interval=${interval}`
-        console.log(chalk.bgRed(url))
+        url += `?symbol=${symbol}&interval=${interval}&limit=${limit}`
         let res = await axios({ method: 'GET', url, headers: HEADERS })
         return res
     }
