@@ -22,3 +22,5 @@ env.PGPASSWORD
         "SECRET": ""
     }
 }
+
+binance docs https://binance-docs.github.io/apidocs/spot/en/#current-average-price

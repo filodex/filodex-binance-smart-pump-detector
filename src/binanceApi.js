@@ -84,11 +84,25 @@ export default function Api(opt) {
     }
     this.getExchangeInfo = async () => {
         let url = API_URL + '/api/v3/exchangeInfo'
+
         let res = await axios({ method: 'GET', url, headers: HEADERS })
         return res
     }
     this.getAllPrices = async () => {
         let url = API_URL + '/api/v3/ticker/price'
+        let res = await axios({ method: 'GET', url, headers: HEADERS })
+        return res
+    }
+    this.getCandles = async ({
+        symbol = 'BTCUSDT',
+        interval = '1m',
+        startTime,
+        endTime,
+        limit,
+    }) => {
+        let url = API_URL + '/api/v3/klines'
+        url += `?symbol=${symbol}&interval=${interval}`
+        console.log(chalk.bgRed(url))
         let res = await axios({ method: 'GET', url, headers: HEADERS })
         return res
     }
