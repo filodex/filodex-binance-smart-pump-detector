@@ -4,6 +4,7 @@
 import Api from './binanceApi.js'
 import config from 'config'
 import fs from 'fs'
+import path from 'path'
 // РАСКОММЕНТИТЬ!!!!
 //import { writePrices } from './postgres.js'
 import chalk from 'chalk'
@@ -227,33 +228,57 @@ export async function calcAtrForAllCoinsAndWriteToFile() {
      * 3. записать в файл
      */
 
+    let atrs = []
+    let errTickers = []
     for await (const iter of futuresCoinsList) {
+        let candles
+        try {
+            candles = (
+                await api.getCandles({
+                    symbol: iter,
+                    interval: '1m',
+                    limit: 1000,
+                })
+            ).data
+        } catch (error) {
+            console.log(chalk.bgRed('ticker ' + iter))
+            console.log(error)
+            errTickers.push(iter)
+            continue
+        }
+
+        // candles[0][1] - open price
+        // candles[0][4] - close price
+        let sumOfDeviations = 0
+        for (const iterator of candles) {
+            let o = iterator[1]
+            let c = iterator[4]
+            sumOfDeviations += Math.abs(c - o)
+        }
+
+        let atr_abs = sumOfDeviations / candles.length
+        let atr_relative =
+            Math.floor(
+                ((Number(candles[candles.length - 1][4]) + atr_abs) /
+                    Number(candles[candles.length - 1][4]) -
+                    1) *
+                    10000
+            ) / 100
+        atrs.push({
+            ticker: iter,
+            atr_abs,
+            atr_relative,
+            from: candles[0][6],
+            to: candles[candles.length - 1][6],
+        })
+        console.log(atrs[atrs.length - 1])
     }
 
-    // РАСЧЕТ ATR
-    // let candlesALGO = (
-    //     await api.getCandles({
-    //         symbol: 'DFUSDT',
-    //         interval: '1m',
-    //         limit: 1000,
-    //     })
-    // ).data
+    console.log(atrs)
+    console.log(errTickers)
 
-    // // candles[0][1] - open price
-    // // candles[0][4] - close price
-    // let diff_sum = 0
-    // for (const iterator of candlesALGO) {
-    //     let o = iterator[1]
-    //     let c = iterator[4]
-    //     diff_sum += Math.abs(c - o)
-    // }
-    // let atr_abs = diff_sum / candlesALGO.length
-    // let atr_relative =
-    //     Math.floor(
-    //         ((Number(candlesALGO[candlesALGO.length - 1][4]) + atr_abs) /
-    //             Number(candlesALGO[candlesALGO.length - 1][4]) -
-    //             1) *
-    //             10000
-    //     ) / 100
-    // console.log(atr_relative)
+    fs.writeFileSync(
+        path.join(path.resolve(), 'src', 'BinanceFuturesAtrs.json'),
+        JSON.stringify(atrs, '', 2)
+    )
 }

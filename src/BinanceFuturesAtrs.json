@@ -1,0 +1,898 @@
+[
+  {
+    "ticker": "AAVEUSDT",
+    "atr_abs": 0.08559999999999993,
+    "atr_relative": 0.09,
+    "from": 1667782499999,
+    "to": 1667842439999
+  },
+  {
+    "ticker": "ADAUSDT",
+    "atr_abs": 0.0003154,
+    "atr_relative": 0.07,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "ALGOUSDT",
+    "atr_abs": 0.0007053999999999981,
+    "atr_relative": 0.16,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "ALICEUSDT",
+    "atr_abs": 0.0012539999999999958,
+    "atr_relative": 0.07,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "ALPHAUSDT",
+    "atr_abs": 0.00008070000000000013,
+    "atr_relative": 0.06,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "ANKRUSDT",
+    "atr_abs": 0.000019459999999999902,
+    "atr_relative": 0.06,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "ANTUSDT",
+    "atr_abs": 0.0015739999999999981,
+    "atr_relative": 0.08,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "APEUSDT",
+    "atr_abs": 0.0045520000000000005,
+    "atr_relative": 0.09,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "API3USDT",
+    "atr_abs": 0.0011170000000000004,
+    "atr_relative": 0.05,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "ARPAUSDT",
+    "atr_abs": 0.00002085000000000019,
+    "atr_relative": 0.05,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "ARUSDT",
+    "atr_abs": 0.019729999999999945,
+    "atr_relative": 0.14,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "ATAUSDT",
+    "atr_abs": 0.00009529999999999942,
+    "atr_relative": 0.05,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "ATOMUSDT",
+    "atr_abs": 0.014498000000000028,
+    "atr_relative": 0.1,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "AUDIOUSDT",
+    "atr_abs": 0.00021500000000000018,
+    "atr_relative": 0.09,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "AVAXUSDT",
+    "atr_abs": 0.016610000000000003,
+    "atr_relative": 0.09,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "AXSUSDT",
+    "atr_abs": 0.009910000000000006,
+    "atr_relative": 0.1,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "BAKEUSDT",
+    "atr_abs": 0.00017549999999999952,
+    "atr_relative": 0.06,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "BALUSDT",
+    "atr_abs": 0.003823000000000004,
+    "atr_relative": 0.05,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "BANDUSDT",
+    "atr_abs": 0.004758999999999995,
+    "atr_relative": 0.19,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "BATUSDT",
+    "atr_abs": 0.0002948999999999991,
+    "atr_relative": 0.09,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "BCHUSDT",
+    "atr_abs": 0.07110000000000002,
+    "atr_relative": 0.06,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "BELUSDT",
+    "atr_abs": 0.0003700000000000001,
+    "atr_relative": 0.06,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "BLZUSDT",
+    "atr_abs": 0.00005139999999999979,
+    "atr_relative": 0.06,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "BNXUSDT",
+    "atr_abs": 0.03089999999999978,
+    "atr_relative": 0.02,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "BTCUSDT",
+    "atr_abs": 7.917120000000039,
+    "atr_relative": 0.03,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "BTSUSDT",
+    "atr_abs": 0.0000025999999999999946,
+    "atr_relative": 0.02,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "BTTCUSDT",
+    "atr_abs": 2.5999999999999852e-9,
+    "atr_relative": 0.32,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "C98USDT",
+    "atr_abs": 0.00023629999999999913,
+    "atr_relative": 0.07,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "CELOUSDT",
+    "atr_abs": 0.0008710000000000008,
+    "atr_relative": 0.11,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "CELRUSDT",
+    "atr_abs": 0.00001129000000000004,
+    "atr_relative": 0.06,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "CHRUSDT",
+    "atr_abs": 0.00008900000000000013,
+    "atr_relative": 0.05,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "CHZUSDT",
+    "atr_abs": 0.00043599999999999965,
+    "atr_relative": 0.15,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "COMPUSDT",
+    "atr_abs": 0.037529999999999876,
+    "atr_relative": 0.07,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "COTIUSDT",
+    "atr_abs": 0.00011659999999999993,
+    "atr_relative": 0.1,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "CRVUSDT",
+    "atr_abs": 0.0009790000000000003,
+    "atr_relative": 0.09,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "CTKUSDT",
+    "atr_abs": 0.0007040000000000006,
+    "atr_relative": 0.07,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "CTSIUSDT",
+    "atr_abs": 0.00018310000000000063,
+    "atr_relative": 0.11,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "CVCUSDT",
+    "atr_abs": 0.00009599999999999981,
+    "atr_relative": 0.07,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "DARUSDT",
+    "atr_abs": 0.00018807999999999984,
+    "atr_relative": 0.08,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "DASHUSDT",
+    "atr_abs": 0.05176000000000018,
+    "atr_relative": 0.11,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "DENTUSDT",
+    "atr_abs": 5.979999999999994e-7,
+    "atr_relative": 0.06,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "DGBUSDT",
+    "atr_abs": 0.000004689999999999995,
+    "atr_relative": 0.05,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "DOGEUSDT",
+    "atr_abs": 0.00014554999999999996,
+    "atr_relative": 0.12,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "DOTUSDT",
+    "atr_abs": 0.006879999999999996,
+    "atr_relative": 0.09,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "DUSKUSDT",
+    "atr_abs": 0.00006790000000000001,
+    "atr_relative": 0.05,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "DYDXUSDT",
+    "atr_abs": 0.003192,
+    "atr_relative": 0.18,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "EGLDUSDT",
+    "atr_abs": 0.041439999999999956,
+    "atr_relative": 0.07,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "ENJUSDT",
+    "atr_abs": 0.0003447999999999992,
+    "atr_relative": 0.07,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "ENSUSDT",
+    "atr_abs": 0.017029999999999986,
+    "atr_relative": 0.1,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "EOSUSDT",
+    "atr_abs": 0.0005909999999999971,
+    "atr_relative": 0.05,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "ETCUSDT",
+    "atr_abs": 0.020350000000000004,
+    "atr_relative": 0.08,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "ETHUSDT",
+    "atr_abs": 0.9257400000000013,
+    "atr_relative": 0.05,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "FILUSDT",
+    "atr_abs": 0.006819999999999995,
+    "atr_relative": 0.11,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "FLMUSDT",
+    "atr_abs": 0.00005060000000000003,
+    "atr_relative": 0.04,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "FLOWUSDT",
+    "atr_abs": 0.001284999999999999,
+    "atr_relative": 0.07,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "FTMUSDT",
+    "atr_abs": 0.0002797999999999989,
+    "atr_relative": 0.1,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "FTTUSDT",
+    "atr_abs": 0.03159999999999996,
+    "atr_relative": 0.14,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "GALAUSDT",
+    "atr_abs": 0.00004336000000000002,
+    "atr_relative": 0.11,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "GALUSDT",
+    "atr_abs": 0.002399000000000007,
+    "atr_relative": 0.11,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "GMTUSDT",
+    "atr_abs": 0.0009741000000000004,
+    "atr_relative": 0.16,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "GTCUSDT",
+    "atr_abs": 0.0028649999999999886,
+    "atr_relative": 0.12,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "HBARUSDT",
+    "atr_abs": 0.000057499999999999866,
+    "atr_relative": 0.09,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "HOTUSDT",
+    "atr_abs": 0.000001398999999999998,
+    "atr_relative": 0.06,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "ICXUSDT",
+    "atr_abs": 0.00009799999999999997,
+    "atr_relative": 0.04,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "IMXUSDT",
+    "atr_abs": 0.0006170000000000006,
+    "atr_relative": 0.1,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "IOSTUSDT",
+    "atr_abs": 0.000004530000000000008,
+    "atr_relative": 0.03,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "IOTAUSDT",
+    "atr_abs": 0.0001718000000000001,
+    "atr_relative": 0.06,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "IOTXUSDT",
+    "atr_abs": 0.000044629999999999944,
+    "atr_relative": 0.12,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "JASMYUSDT",
+    "atr_abs": 0.000006676000000000018,
+    "atr_relative": 0.12,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "KLAYUSDT",
+    "atr_abs": 0.0001664999999999998,
+    "atr_relative": 0.07,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "KNCUSDT",
+    "atr_abs": 0.0005030000000000004,
+    "atr_relative": 0.05,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "KSMUSDT",
+    "atr_abs": 0.03117000000000006,
+    "atr_relative": 0.08,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "LINAUSDT",
+    "atr_abs": 0.000006069999999999983,
+    "atr_relative": 0.07,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "LITUSDT",
+    "atr_abs": 0.0013439999999999993,
+    "atr_relative": 0.12,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "LPTUSDT",
+    "atr_abs": 0.005040000000000022,
+    "atr_relative": 0.04,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "LRCUSDT",
+    "atr_abs": 0.0003632999999999996,
+    "atr_relative": 0.11,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "LTCUSDT",
+    "atr_abs": 0.08505999999999998,
+    "atr_relative": 0.12,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "MANAUSDT",
+    "atr_abs": 0.0005227000000000014,
+    "atr_relative": 0.07,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "MASKUSDT",
+    "atr_abs": 0.008965999999999998,
+    "atr_relative": 0.2,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "MATICUSDT",
+    "atr_abs": 0.0019442000000000014,
+    "atr_relative": 0.15,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "MKRUSDT",
+    "atr_abs": 0.354,
+    "atr_relative": 0.04,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "MTLUSDT",
+    "atr_abs": 0.0003249999999999974,
+    "atr_relative": 0.03,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "NEARUSDT",
+    "atr_abs": 0.0025579999999999874,
+    "atr_relative": 0.08,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "NEOUSDT",
+    "atr_abs": 0.004319999999999963,
+    "atr_relative": 0.04,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "NKNUSDT",
+    "atr_abs": 0.00009749999999999986,
+    "atr_relative": 0.09,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "OCEANUSDT",
+    "atr_abs": 0.00031959999999999964,
+    "atr_relative": 0.13,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "OGNUSDT",
+    "atr_abs": 0.00009349999999999936,
+    "atr_relative": 0.06,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "OMGUSDT",
+    "atr_abs": 0.0007890000000000032,
+    "atr_relative": 0.04,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "ONEUSDT",
+    "atr_abs": 0.00001731999999999998,
+    "atr_relative": 0.08,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "ONTUSDT",
+    "atr_abs": 0.0001359000000000001,
+    "atr_relative": 0.05,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "OPUSDT",
+    "atr_abs": 0.0020309999999999977,
+    "atr_relative": 0.16,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "PEOPLEUSDT",
+    "atr_abs": 0.00004319000000000002,
+    "atr_relative": 0.16,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "QTUMUSDT",
+    "atr_abs": 0.0012050000000000006,
+    "atr_relative": 0.04,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "RAYUSDT",
+    "atr_abs": 0.00038700000000000035,
+    "atr_relative": 0.07,
+    "from": 1667782559999,
+    "to": 1667842499999
+  },
+  {
+    "ticker": "REEFUSDT",
+    "atr_abs": 0.0000037700000000000067,
+    "atr_relative": 0.07,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "RENUSDT",
+    "atr_abs": 0.00007549999999999988,
+    "atr_relative": 0.06,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "RLCUSDT",
+    "atr_abs": 0.0008209999999999997,
+    "atr_relative": 0.06,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "ROSEUSDT",
+    "atr_abs": 0.00006813000000000018,
+    "atr_relative": 0.1,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "RSRUSDT",
+    "atr_abs": 0.0000075000000000000154,
+    "atr_relative": 0.1,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "RUNEUSDT",
+    "atr_abs": 0.0012229999999999969,
+    "atr_relative": 0.07,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "RVNUSDT",
+    "atr_abs": 0.00002201000000000001,
+    "atr_relative": 0.07,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "SANDUSDT",
+    "atr_abs": 0.000728800000000001,
+    "atr_relative": 0.08,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "SFPUSDT",
+    "atr_abs": 0.00023090000000000054,
+    "atr_relative": 0.05,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "SKLUSDT",
+    "atr_abs": 0.000025910000000000072,
+    "atr_relative": 0.06,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "SNXUSDT",
+    "atr_abs": 0.0028849999999999935,
+    "atr_relative": 0.1,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "SOLUSDT",
+    "atr_abs": 0.04124999999999997,
+    "atr_relative": 0.12,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "SRMUSDT",
+    "atr_abs": 0.00041200000000000037,
+    "atr_relative": 0.05,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "STMXUSDT",
+    "atr_abs": 0.000004940999999999998,
+    "atr_relative": 0.06,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "STORJUSDT",
+    "atr_abs": 0.0002543000000000003,
+    "atr_relative": 0.05,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "SUSHIUSDT",
+    "atr_abs": 0.0029590000000000016,
+    "atr_relative": 0.16,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "SXPUSDT",
+    "atr_abs": 0.0002108000000000001,
+    "atr_relative": 0.06,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "THETAUSDT",
+    "atr_abs": 0.0010100000000000005,
+    "atr_relative": 0.08,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "TOMOUSDT",
+    "atr_abs": 0.00013359999999999962,
+    "atr_relative": 0.02,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "TRBUSDT",
+    "atr_abs": 0.02244999999999996,
+    "atr_relative": 0.12,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "TRXUSDT",
+    "atr_abs": 0.000020179999999999712,
+    "atr_relative": 0.03,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "UNFIUSDT",
+    "atr_abs": 0.005443000000000004,
+    "atr_relative": 0.08,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "UNIUSDT",
+    "atr_abs": 0.008909999999999994,
+    "atr_relative": 0.12,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "WAVESUSDT",
+    "atr_abs": 0.002366000000000004,
+    "atr_relative": 0.07,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "WOOUSDT",
+    "atr_abs": 0.00015919999999999994,
+    "atr_relative": 0.08,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "XEMUSDT",
+    "atr_abs": 0.000012499999999999928,
+    "atr_relative": 0.03,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "XLMUSDT",
+    "atr_abs": 0.00006090000000000046,
+    "atr_relative": 0.05,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "XMRUSDT",
+    "atr_abs": 0.07630000000000013,
+    "atr_relative": 0.04,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "XRPUSDT",
+    "atr_abs": 0.00030239999999999944,
+    "atr_relative": 0.06,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "XTZUSDT",
+    "atr_abs": 0.0007799999999999974,
+    "atr_relative": 0.05,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "YFIUSDT",
+    "atr_abs": 3.917,
+    "atr_relative": 0.04,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "ZECUSDT",
+    "atr_abs": 0.028999999999999942,
+    "atr_relative": 0.05,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "ZILUSDT",
+    "atr_abs": 0.000027169999999999965,
+    "atr_relative": 0.08,
+    "from": 1667782619999,
+    "to": 1667842559999
+  },
+  {
+    "ticker": "ZRXUSDT\r\n",
+    "atr_abs": 0.00011540000000000161,
+    "atr_relative": 0.04,
+    "from": 1667782619999,
+    "to": 1667842559999
+  }
+]
