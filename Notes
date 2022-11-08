@@ -7,7 +7,9 @@ app.js все запустит
 
 сделать navbar со ссылкой на countdown timer
 
-add logger
+add logger write to file
+
+adda loader
 
 --Проблемы--
 почему клиент делает по 2 реквеста
