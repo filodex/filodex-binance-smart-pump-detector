@@ -222,48 +222,20 @@ export async function findGreatestDeviations(pricesStore_frozen) {
 }
 
 export async function calcAtrForAllCoinsAndWriteToFile() {
-    /**
-     * 1. По каждой монете нужно пройтись по отдельности, получить для каждой свечи 5минутные
-     * 2. Посчитать ATR
-     * 3. записать в файл
-     */
-
+    console.log(chalk.blue("Calculating atr's, please wait..."))
     let atrs = []
-    let errTickers = []
     for await (const iter of futuresCoinsList) {
         let candles
         try {
-            candles = (
-                await api.getCandles({
-                    symbol: iter,
-                    interval: '1m',
-                    limit: 1000,
-                })
-            ).data
+            candles = await getCandles_local(iter)
         } catch (error) {
-            console.log(chalk.bgRed('ticker ' + iter))
-            console.log(error)
-            errTickers.push(iter)
             continue
         }
 
-        // candles[0][1] - open price
-        // candles[0][4] - close price
-        let sumOfDeviations = 0
-        for (const iterator of candles) {
-            let o = iterator[1]
-            let c = iterator[4]
-            sumOfDeviations += Math.abs(c - o)
-        }
-
+        let sumOfDeviations = calcDeviationsSum(candles)
         let atr_abs = sumOfDeviations / candles.length
-        let atr_relative =
-            Math.floor(
-                ((Number(candles[candles.length - 1][4]) + atr_abs) /
-                    Number(candles[candles.length - 1][4]) -
-                    1) *
-                    10000
-            ) / 100
+        let atr_relative = calcRelativeAtr(candles, atr_abs)
+
         atrs.push({
             ticker: iter,
             atr_abs,
@@ -271,14 +243,49 @@ export async function calcAtrForAllCoinsAndWriteToFile() {
             from: candles[0][6],
             to: candles[candles.length - 1][6],
         })
-        console.log(atrs[atrs.length - 1])
     }
 
-    console.log(atrs)
-    console.log(errTickers)
-
+    atrs.push({ updateTime: new Date() })
     fs.writeFileSync(
         path.join(path.resolve(), 'src', 'BinanceFuturesAtrs.json'),
         JSON.stringify(atrs, '', 2)
     )
+    console.log(
+        chalk.blue("Calculating atr's done! And already written to file")
+    )
+
+    async function getCandles_local(ticker) {
+        try {
+            let candles = (
+                await api.getCandles({
+                    symbol: ticker,
+                    interval: '1m',
+                    limit: 1000,
+                })
+            ).data
+
+            return candles
+        } catch (error) {
+            throw error
+        }
+    }
+    function calcDeviationsSum(candles) {
+        let sumOfDeviations = 0
+        for (const iterator of candles) {
+            let o = iterator[1]
+            let c = iterator[4]
+            sumOfDeviations += Math.abs(c - o)
+        }
+        return sumOfDeviations
+    }
+    function calcRelativeAtr(candles, atr_abs) {
+        return (
+            Math.floor(
+                ((Number(candles[candles.length - 1][4]) + atr_abs) /
+                    Number(candles[candles.length - 1][4]) -
+                    1) *
+                    10000
+            ) / 100
+        )
+    }
 }

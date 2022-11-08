@@ -1,12 +1,12 @@
 import { request, Router } from 'express'
-import { getGreatestDeviations_toEndpoint } from '../app.js'
+import { throwGreatestDeviations_toEndpoint } from '../app.js'
 
 const router = Router()
 
 // /api/prices/lastknown
 router.get('/lastknown', (req, res) => {
     try {
-        let greatestDeviations = getGreatestDeviations_toEndpoint()
+        let greatestDeviations = throwGreatestDeviations_toEndpoint()
 
         res.status(200).json({
             message: 'Here it is',

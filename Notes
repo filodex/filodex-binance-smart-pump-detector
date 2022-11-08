@@ -7,12 +7,14 @@ app.js все запустит
 
 сделать navbar со ссылкой на countdown timer
 
+add logger
 
-
+--Проблемы--
 почему клиент делает по 2 реквеста
 
 сделать выделение цветом сильных отклонений
 
+--config example--
 env.PGPASSWORD
 {
     "WriteToPG": false,

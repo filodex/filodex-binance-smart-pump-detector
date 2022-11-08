@@ -102,7 +102,9 @@ export default function Api(opt) {
     }) => {
         // [0] - ранняя дата [499] - поздняя дата
         let url = API_URL + '/api/v3/klines'
-        url += `?symbol=${symbol}&interval=${interval}&limit=${limit}`
+        url += `?symbol=${symbol}&interval=${interval}&limit=${limit}${
+            startTime ? '&startTime=' + startTime : ''
+        }${endTime ? '&endTime=' + endTime : ''}`
         let res = await axios({ method: 'GET', url, headers: HEADERS })
         return res
     }
