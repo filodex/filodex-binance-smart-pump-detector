@@ -1,0 +1,8 @@
+[11.11.2022, 20:52:14] [94mapp.js has been started...[39m
+[11.11.2022, 21:12:17] [94mapp.js has been started...[39m
+[11.11.2022, 21:12:46] [94mapp.js has been started...[39m
+[11.11.2022, 21:13:00] [94mapp.js has been started...[39m
+[11.11.2022, 21:13:11] [94mapp.js has been started...[39m
+[11.11.2022, 21:13:11] uncaughtException Error: listen EADDRINUSE: address already in use :::5000
+[11.11.2022, 21:13:25] [94mapp.js has been started...[39m
+[11.11.2022, 21:13:25] uncaughtException Error: listen EADDRINUSE: address already in use :::5000

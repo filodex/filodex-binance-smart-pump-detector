@@ -11,10 +11,15 @@ function App() {
 
     return (
         <BrowserRouter>
+            <link
+                href='https://fonts.googleapis.com/icon?family=Material+Icons'
+                rel='stylesheet'
+            ></link>
             <nav>
                 <div className='nav-wrapper'>
                     <a href='#' className='brand-logo left'>
                         Patience is a virtue
+                        <i class='large material-icons'>ac_unit</i>
                     </a>
                     <ul id='nav-mobile' className='right'>
                         <li>
