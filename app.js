@@ -1,5 +1,3 @@
-console.log(chalk.blueBright('app.js has been started...'))
-
 import {
     getFuturesCoinsPrices,
     activatePricesWriter,
@@ -14,8 +12,12 @@ import config from 'config'
 import prices_router from './routes/prices.routes.js'
 import axios from 'axios'
 import { EventEmitter } from 'events'
+import { logToFile } from './src/logger.js'
+
+logToFile(chalk.blueBright('app.js has been started...'))
 
 process.on('uncaughtException', (err, origin) => {
+    logToFile(`uncaughtException ${err}`)
     console.log(chalk.redBright(err, '----', origin))
     process.exit(1)
 })

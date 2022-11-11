@@ -1,6 +1,7 @@
 import axios from 'axios'
 import chalk from 'chalk'
 import hash from 'hash.js'
+import { logToFile } from './logger.js'
 
 const API_URL = 'https://api.binance.com'
 
@@ -20,7 +21,7 @@ export default function Api(opt) {
     this.SECRET = opt.SECRET
     HEADERS['X-MBX-APIKEY'] = this.KEY
     if (!this.KEY) {
-        console.log(chalk.redBright('Не передан ключ'))
+        logToFile(chalk.redBright('Не передан ключ'))
         throw 'Не передан ключ'
     }
 
