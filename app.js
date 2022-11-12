@@ -18,7 +18,7 @@ logToFile(chalk.blueBright('app.js has been started...'))
 
 process.on('uncaughtException', (err, origin) => {
     logToFile(`uncaughtException ${err}`)
-    console.log(chalk.redBright(err, '----', origin))
+
     process.exit(1)
 })
 
@@ -29,7 +29,7 @@ const __dirname = path.resolve()
 const app = express()
 const PORT = config.get('PORT') || 5000
 
-expressHandlers()
+useExpressHandlers()
 
 /**
  * MAIN
@@ -47,11 +47,12 @@ pricesWriter.pricesHandlerEmitter.on('intervalEnded', async (prices) => {
 
 setAtrsUpdateInterval()
 
+/**
+ * Functions
+ */
 export function throwGreatestDeviations_toEndpoint() {
     return greatestDeviations
 }
-
-// functions
 
 //do not use, prices are writing in pricesHandler
 async function writeActualPricesToTable() {
@@ -73,7 +74,7 @@ async function startExpress() {
     }
 }
 
-function expressHandlers() {
+function useExpressHandlers() {
     app.use('/api/prices', prices_router)
     app.use(
         '/countdowntimer',
