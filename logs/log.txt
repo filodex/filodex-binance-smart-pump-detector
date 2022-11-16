@@ -6,3 +6,20 @@
 [11.11.2022, 21:13:11] uncaughtException Error: listen EADDRINUSE: address already in use :::5000
 [11.11.2022, 21:13:25] [94mapp.js has been started...[39m
 [11.11.2022, 21:13:25] uncaughtException Error: listen EADDRINUSE: address already in use :::5000
+[16.11.2022, 12:13:57] [94mapp.js has been started...[39m
+[16.11.2022, 12:18:28] [94mapp.js has been started...[39m
+[16.11.2022, 12:18:54] [94mapp.js has been started...[39m
+[16.11.2022, 13:15:19] uncaughtException Error: connect ETIMEDOUT 100.64.1.1:443
+[16.11.2022, 13:44:28] [94mapp.js has been started...[39m
+[16.11.2022, 13:45:29] uncaughtException Error: ENOENT: no such file or directory, open 'C:\Users\filodex\Documents\GitHub\filodex-binance-smart-pump-detector\BinanceFuturesAtrs.json'
+[16.11.2022, 13:45:56] [94mapp.js has been started...[39m
+[16.11.2022, 13:52:44] [94mapp.js has been started...[39m
+[16.11.2022, 13:53:45] uncaughtException TypeError: Cannot read properties of undefined (reading 'length')
+[16.11.2022, 13:55:00] [94mapp.js has been started...[39m
+[16.11.2022, 14:00:40] [94mapp.js has been started...[39m
+[16.11.2022, 14:09:53] [94mapp.js has been started...[39m
+[16.11.2022, 14:13:57] [94mapp.js has been started...[39m
+[16.11.2022, 14:25:03] [94mapp.js has been started...[39m
+[16.11.2022, 14:44:24] uncaughtException Error: connect ETIMEDOUT 100.64.1.1:443
+[16.11.2022, 14:46:28] [94mapp.js has been started...[39m
+[16.11.2022, 14:47:28] uncaughtException ReferenceError: topPumpsAbsolute is not defined
