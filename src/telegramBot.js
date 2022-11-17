@@ -13,4 +13,6 @@ async function test(params) {
     console.log(await bot.telegram.sendMessage(chatId, 'hehehoho'))
 }
 
-test()
+export async function sendMessageToChannel(text) {
+    bot.telegram.sendMessage(chatId, text)
+}

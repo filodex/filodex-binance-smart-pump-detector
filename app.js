@@ -14,6 +14,8 @@ import axios from 'axios'
 import { EventEmitter } from 'events'
 import { logToFile } from './src/logger.js'
 import fs from 'fs'
+import { logger } from './src/winston.js'
+import { sendMessageToChannel } from './src/telegramBot.js'
 
 logToFile(chalk.blueBright('app.js has been started...'))
 
@@ -45,22 +47,46 @@ let pricesWriter = await activatePricesWriter() //returns event handler
 pricesWriter.pricesHandlerEmitter.on('intervalEnded', async (prices) => {
     greatestDeviations = await findGreatestDeviations(prices) // просто каждую минуту обновляю greatestDeviations и затем пробрасываю в prices.routes
 
-    topPumpsAbsolute = findTopPumpsAbsolute(greatestDeviations)
-    if (topPumpsAbsolute) {
-        sendMessageToTg()
+    let topPumpsAbsoluteMoreThanX = findTopPumpsAbsolute(greatestDeviations, 5)
+    logger.debug(
+        `findTopPumpsAbsolute returned: ${
+            topPumpsAbsoluteMoreThanX[0]
+                ? topPumpsAbsoluteMoreThanX.length + ' objects'
+                : 'nothing(('
+        }`
+    )
+    if (topPumpsAbsoluteMoreThanX[0]) {
+        logger.info('sending message to Telegram with top pumps')
+        sendMessageToTg(topPumpsAbsoluteMoreThanX)
     }
 
     // не работает
     topPumpsAtrRelative = findTopPumpsAtrRelative(greatestDeviations)
 })
 
-calcAtrForAllCoinsAndWriteToFile() // initial
+//calcAtrForAllCoinsAndWriteToFile() // initial
 setAtrsUpdateInterval()
 
 /**
  * Functions
  */
-function findTopPumpsAbsolute(greatestDeviations) {}
+function findTopPumpsAbsolute(greatestDeviations, absoluteDeviation) {
+    console.log('started findTopPumpsAbsolute')
+    let deviationsMoreThanX = []
+    for (const timeframe in greatestDeviations) {
+        // 1min/3min/5min...
+        for (const updown in greatestDeviations[timeframe]) {
+            for (const objKey in greatestDeviations[timeframe][updown]) {
+                let obj = greatestDeviations[timeframe][updown][objKey]
+                if (Math.abs(obj.deviation) > absoluteDeviation) {
+                    console.log(obj)
+                    deviationsMoreThanX.push(obj)
+                }
+            }
+        }
+    }
+    return deviationsMoreThanX
+}
 
 function findTopPumpsAtrRelative(greatestDeviations) {
     try {
@@ -75,7 +101,14 @@ function findTopPumpsAtrRelative(greatestDeviations) {
     } catch (error) {}
 }
 
-function sendMessageToTg() {}
+function sendMessageToTg(arrWithObj) {
+    let strToSend = ''
+    for (const obj of arrWithObj) {
+        strToSend += `ticker: ${obj.ticker}, deviation: ${obj.deviation}\n`
+    }
+    console.log(chalk.bgGray('strTosend is:', strToSend))
+    sendMessageToChannel(strToSend)
+}
 
 function findHighestRelDeviationsMoreThan(x, atrRelativeGreatestDeviations) {
     let greatest = []
