@@ -101,10 +101,18 @@ function findTopPumpsAtrRelative(greatestDeviations) {
     } catch (error) {}
 }
 
+let bannedTickers = []
 function sendMessageToTg(arrWithObj) {
     let strToSend = ''
     for (const obj of arrWithObj) {
+        if (bannedTickers.indexOf(obj.ticker) >= 0) {
+            continue
+        }
         strToSend += `ticker: ${obj.ticker}, deviation: ${obj.deviation}\n`
+        bannedTickers.push(obj.ticker)
+        setTimeout(() => {
+            bannedTickers.splice(bannedTickers.indexOf(obj.ticker), 1)
+        }, 300000)
     }
     console.log(chalk.bgGray('strTosend is:', strToSend))
     sendMessageToChannel(strToSend)
