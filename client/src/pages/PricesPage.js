@@ -145,6 +145,9 @@ class PricesUpdateTimer extends React.Component {
     }
     componentDidMount() {
         let timerInterval = setInterval(() => {
+            if (this.state.timer == 0) {
+                this.setState({ timer: 59 })
+            }
             this.setState({ timer: this.state.timer - 1 })
         }, 1000)
     }
