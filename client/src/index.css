@@ -50,4 +50,20 @@ nav {
     left: 1em;
     bottom: 1em;
     background-color: rgb(81, 76, 74);
+    padding: 10px;
+    font-size: large;
+}
+
+@media (max-width<700px) {
+    * {
+        margin: 0px !important;
+        padding: 0px !important;
+        align-items: center;
+    }
+    .col {
+        width: 10%;
+        margin: 0px !important;
+        padding: 0px !important;
+        margin-right: 0rem;
+    }
 }

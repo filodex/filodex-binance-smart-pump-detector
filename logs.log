@@ -185,3 +185,51 @@
 {"level":"debug","message":"findTopPumpsAbsolute returned: 1 objects","timestamp":"2022-11-22T12:07:18.903Z"}
 {"level":"info","message":"sending message to Telegram with top pumps","timestamp":"2022-11-22T12:07:18.903Z"}
 {"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T12:13:36.599Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:36:52.868Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:37:52.941Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:38:52.684Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:39:52.683Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:40:52.688Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:41:52.696Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:42:52.718Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:43:52.709Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:44:52.700Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:45:52.708Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:46:52.724Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:47:52.727Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:48:52.728Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:49:52.747Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:50:52.787Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:51:52.803Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:52:52.786Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:53:52.796Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:54:53.042Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:55:52.795Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:56:53.091Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:57:53.062Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:58:53.082Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T19:59:52.853Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: 2 objects","timestamp":"2022-11-22T20:00:52.859Z"}
+{"level":"info","message":"sending message to Telegram with top pumps","timestamp":"2022-11-22T20:00:52.859Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: 2 objects","timestamp":"2022-11-22T20:01:52.869Z"}
+{"level":"info","message":"sending message to Telegram with top pumps","timestamp":"2022-11-22T20:01:52.870Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T20:09:36.913Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T20:10:36.763Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T20:11:36.771Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T20:12:36.764Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T20:13:36.762Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T20:14:36.798Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T20:15:36.774Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T20:16:36.791Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T20:17:37.755Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T20:18:36.785Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T20:19:36.806Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T20:20:36.836Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T20:21:36.850Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T20:22:36.831Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T20:23:36.835Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T20:24:36.852Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: 1 objects","timestamp":"2022-11-22T20:25:37.098Z"}
+{"level":"info","message":"sending message to Telegram with top pumps","timestamp":"2022-11-22T20:25:37.098Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: 2 objects","timestamp":"2022-11-22T20:26:36.863Z"}
+{"level":"info","message":"sending message to Telegram with top pumps","timestamp":"2022-11-22T20:26:36.864Z"}

@@ -19,7 +19,7 @@ function App() {
                 <div className='nav-wrapper'>
                     <a href='#' className='brand-logo left'>
                         Patience is a virtue
-                        <i class='large material-icons'>ac_unit</i>
+                        <i className='large material-icons'>ac_unit</i>
                     </a>
                     <ul id='nav-mobile' className='right'>
                         <li>
