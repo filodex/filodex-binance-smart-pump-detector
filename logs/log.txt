@@ -31,3 +31,8 @@
 [17.11.2022, 14:18:19] [94mapp.js has been started...[39m
 [17.11.2022, 15:21:23] [94mapp.js has been started...[39m
 [17.11.2022, 15:45:33] [94mapp.js has been started...[39m
+[22.11.2022, 13:35:39] [94mapp.js has been started...[39m
+[22.11.2022, 14:51:41] uncaughtException Error: 400: Bad Request: message text is empty
+[22.11.2022, 14:54:18] [94mapp.js has been started...[39m
+[22.11.2022, 15:07:19] uncaughtException Error: 400: Bad Request: message text is empty
+[22.11.2022, 15:12:35] [94mapp.js has been started...[39m

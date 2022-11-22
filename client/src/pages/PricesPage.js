@@ -6,12 +6,15 @@ export function PricesPage() {
     return (
         <div className='page'>
             <div>
-                <h3 className='hoverable center'>Top 10 most volatile coins</h3>
+                <h3 className='header-top-10 center'>
+                    Top 10 most volatile coins
+                </h3>
             </div>
 
             <div className='row deviationsRows'>
                 <DeviationsRows />
             </div>
+            <PricesUpdateTimer />
         </div>
     )
 }
@@ -20,7 +23,9 @@ function DeviationsArray(props) {
     if (!props.array) {
         return
     }
-    return <div className='deviationsList'>{props.array}</div>
+    return (
+        <div className='deviationsList text-color text-bold'>{props.array}</div>
+    )
 }
 
 function DeviationsRow(props) {
@@ -33,14 +38,16 @@ function DeviationsRow(props) {
         return (
             <div className='row'>
                 <div className=''>
-                    <h4 className='center'>In {props.timeframe} min</h4>
+                    <h4 className='center text-color'>
+                        In {props.timeframe} min
+                    </h4>
                     <div className='row'>
                         <div className='col s3 offset-s3 '>
-                            <h4 className=''>Grow</h4>
+                            <h4 className='text-color'>Grow</h4>
                             <DeviationsArray array={up_jsx} />
                         </div>
                         <div className='col s3 '>
-                            <h4 className=''>Fall</h4>
+                            <h4 className='text-color'>Fall</h4>
                             <DeviationsArray array={down_jsx} />
                         </div>
                     </div>
@@ -48,7 +55,7 @@ function DeviationsRow(props) {
             </div>
         )
     } catch (error) {
-        return <div className='row'>Waiting for prices</div>
+        return <div className='row text-color'>Waiting for prices</div>
     }
 }
 
@@ -129,4 +136,26 @@ function arrWithObjToJSXList(arrWithObj) {
     }
 
     return <ul className='ulList'>{liList}</ul>
+}
+
+class PricesUpdateTimer extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = { timer: 59 }
+    }
+    componentDidMount() {
+        let timerInterval = setInterval(() => {
+            this.setState({ timer: this.state.timer - 1 })
+        }, 1000)
+    }
+
+    componentWillUnmount() {}
+    render() {
+        return (
+            <div className='timer'>
+                Prices update in: {this.props.isIntervalStarted}
+                {this.state.timer}
+            </div>
+        )
+    }
 }
