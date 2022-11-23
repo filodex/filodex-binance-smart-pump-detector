@@ -4,7 +4,7 @@ import { useRoutes } from './routes'
 import { BrowserRouter } from 'react-router-dom'
 import { PricesPage } from './pages/PricesPage'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import { WelcomePage } from './pages/WelcomePage'
+import { WelcomePage } from './pages/WelcomePage.tsx'
 
 function App() {
     //const routes = useRoutes()
