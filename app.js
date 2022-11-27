@@ -7,7 +7,7 @@ import {
 import { writePrices } from './src/postgres.js'
 import chalk from 'chalk'
 import express from 'express'
-import path from 'path'
+import path, { format } from 'path'
 import config from 'config'
 import prices_router from './routes/prices.routes.js'
 import axios from 'axios'
@@ -16,6 +16,7 @@ import { logToFile } from './src/logger.js'
 import fs from 'fs'
 import { logger } from './src/winston.js'
 import { sendMessageToChannel } from './src/telegramBot.js'
+import { Format } from 'telegraf'
 
 logToFile(chalk.blueBright('app.js has been started...'))
 
@@ -215,3 +216,5 @@ async function setAtrsUpdateInterval() {
         calcAtrForAllCoinsAndWriteToFile()
     }, 86400000) //24hours
 }
+
+let abs
