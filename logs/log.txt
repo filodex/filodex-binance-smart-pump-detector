@@ -40,3 +40,28 @@
 [22.11.2022, 23:01:52] uncaughtException Error: 400: Bad Request: message text is empty
 [22.11.2022, 23:08:36] [94mapp.js has been started...[39m
 [22.11.2022, 23:26:36] uncaughtException Error: 400: Bad Request: message text is empty
+[27.11.2022, 18:09:00] [94mapp.js has been started...[39m
+[27.11.2022, 18:14:28] [94mapp.js has been started...[39m
+[27.11.2022, 18:15:36] [94mapp.js has been started...[39m
+[27.11.2022, 18:16:39] [94mapp.js has been started...[39m
+[27.11.2022, 18:16:39] uncaughtException TypeError: app.use() requires a middleware function
+[27.11.2022, 18:16:51] [94mapp.js has been started...[39m
+[27.11.2022, 18:17:30] [94mapp.js has been started...[39m
+[27.11.2022, 18:17:53] [94mapp.js has been started...[39m
+[27.11.2022, 18:18:07] [94mapp.js has been started...[39m
+[27.11.2022, 18:18:22] [94mapp.js has been started...[39m
+[27.11.2022, 18:18:38] [94mapp.js has been started...[39m
+[27.11.2022, 18:18:49] [94mapp.js has been started...[39m
+[27.11.2022, 18:19:12] [94mapp.js has been started...[39m
+[27.11.2022, 18:25:40] [94mapp.js has been started...[39m
+[27.11.2022, 18:26:42] [94mapp.js has been started...[39m
+[27.11.2022, 18:27:07] [94mapp.js has been started...[39m
+[27.11.2022, 18:27:32] [94mapp.js has been started...[39m
+[27.11.2022, 18:32:39] [94mapp.js has been started...[39m
+[27.11.2022, 18:32:45] [94mapp.js has been started...[39m
+[27.11.2022, 18:34:38] [94mapp.js has been started...[39m
+[27.11.2022, 18:35:26] [94mapp.js has been started...[39m
+[27.11.2022, 18:39:32] [94mapp.js has been started...[39m
+[27.11.2022, 18:42:59] [94mapp.js has been started...[39m
+[27.11.2022, 18:49:13] [94mapp.js has been started...[39m
+[27.11.2022, 18:49:34] [94mapp.js has been started...[39m

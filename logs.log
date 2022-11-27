@@ -233,3 +233,29 @@
 {"level":"info","message":"sending message to Telegram with top pumps","timestamp":"2022-11-22T20:25:37.098Z"}
 {"level":"debug","message":"findTopPumpsAbsolute returned: 2 objects","timestamp":"2022-11-22T20:26:36.863Z"}
 {"level":"info","message":"sending message to Telegram with top pumps","timestamp":"2022-11-22T20:26:36.864Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:10:01.765Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:11:01.530Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:12:01.540Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:13:01.763Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:14:01.777Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:15:29.214Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:20:13.882Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:21:14.490Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:22:13.488Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:23:13.500Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:24:13.647Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:25:13.527Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:28:32.843Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:29:32.672Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:30:32.695Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:31:32.692Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:32:32.652Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:33:46.606Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:36:27.168Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:37:27.023Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:44:00.489Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:45:00.252Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:46:00.291Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:47:01.228Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:48:00.293Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-27T15:49:00.277Z"}

@@ -17,6 +17,7 @@ import fs from 'fs'
 import { logger } from './src/winston.js'
 import { sendMessageToChannel } from './src/telegramBot.js'
 import { Format } from 'telegraf'
+import { getStatistics } from './src/middlewares.js'
 
 logToFile(chalk.blueBright('app.js has been started...'))
 
@@ -188,6 +189,7 @@ async function startExpress() {
 }
 
 function useExpressHandlers() {
+    app.use('/api', getStatistics)
     app.use('/api/prices', prices_router)
     app.use(
         '/countdowntimer',
