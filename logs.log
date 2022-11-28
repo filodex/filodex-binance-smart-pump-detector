@@ -186,3 +186,8 @@
 {"level":"info","message":"sending message to Telegram with top pumps","timestamp":"2022-11-22T12:07:18.903Z"}
 {"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T12:13:36.599Z"}
 {"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T12:14:36.743Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-28T14:52:56.216Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-28T14:53:56.045Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-28T14:54:56.023Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-28T14:55:55.036Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-28T14:56:55.081Z"}
