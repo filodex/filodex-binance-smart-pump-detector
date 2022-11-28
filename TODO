@@ -1,0 +1,28 @@
+--Задачи--
+
+-   вывести ракеты, которые ушли в телегу в отдельную колонку или над всеми элементами
+-   pricesHandler.js write prices is undefined error in pm2 console!!!
+
+--Проблемы--
+
+-   почему клиент делает по 2 реквеста
+-   сделать выделение цветом сильных отклонений
+
+--На будущее--
+
+-   добавить красоту из материалайза
+-   add loader
+-   попробовать сделать адаптивными grow fall столбцы
+
+--config example--
+env.PGPASSWORD
+{
+"WriteToPG": false,
+"PORT": 5000,
+"USER": {
+"KEY": "",
+"SECRET": ""
+}
+}
+
+binance docs https://binance-docs.github.io/apidocs/spot/en/#current-average-price
