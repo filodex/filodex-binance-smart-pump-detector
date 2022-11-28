@@ -4,7 +4,7 @@ import { logger } from './winston.js'
 let requestsCount = 0
 let requestsCountADay = 0
 
-// on /api call
+// On /api call
 export function getStatistics(req, res, next) {
     requestsCount++
     requestsCountADay++
@@ -20,15 +20,12 @@ export function getStatistics(req, res, next) {
 
 // count when midnight starts
 let nowDay = new Date()
-// console.log(`nowDay ${nowDay}`)
 let nextDay = new Date(
     nowDay.getFullYear(),
     nowDay.getMonth(),
     nowDay.getDate() + 1
 )
-// console.log(`nextDay ${nextDay}`)
 let diff = nextDay - nowDay
-// console.log(`diff ${diff}`)
 console.log(
     `timeout that starts startDayStatisticsInterval() started, new day in ${diff}`
 )
@@ -44,6 +41,7 @@ function startDayStatisticsInterval() {
         `New day started!!!, there were ${requestsCountADay} requests this day, and ${requestsCount} requests at all`
     )
     requestsCountADay = 0
+
     // once a day write requestsCountADay to file and make it 0
     let dayStatisticsInterval = setInterval(() => {
         // write to file

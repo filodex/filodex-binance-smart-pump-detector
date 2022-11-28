@@ -23,12 +23,12 @@ logToFile(chalk.blueBright('app.js has been started...'))
 
 process.on('uncaughtException', (err, origin) => {
     logToFile(`uncaughtException ${err}`)
-
     process.exit(1)
 })
 
 let greatestDeviations = []
 let topPumpsAtrRelative = []
+
 const __dirname = path.resolve()
 
 //express
@@ -218,5 +218,3 @@ async function setAtrsUpdateInterval() {
         calcAtrForAllCoinsAndWriteToFile()
     }, 86400000) //24hours
 }
-
-let abs
