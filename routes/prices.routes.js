@@ -13,7 +13,6 @@ router.get('/lastknown', (req, res) => {
             data: greatestDeviations,
             body: 'aahahah',
         })
-        console.log('i got request')
     } catch (error) {
         res.status(500).json({ message: 'Something wrong' })
     }

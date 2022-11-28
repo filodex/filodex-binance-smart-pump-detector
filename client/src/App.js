@@ -4,7 +4,7 @@ import { useRoutes } from './routes'
 import { BrowserRouter } from 'react-router-dom'
 import { PricesPage } from './pages/PricesPage'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import { WelcomePage } from './pages/WelcomePage'
+import { WelcomePage } from './pages/WelcomePage.tsx'
 
 function App() {
     //const routes = useRoutes()
@@ -19,7 +19,7 @@ function App() {
                 <div className='nav-wrapper'>
                     <a href='#' className='brand-logo left'>
                         Patience is a virtue
-                        <i class='large material-icons'>ac_unit</i>
+                        <i className='large material-icons'>ac_unit</i>
                     </a>
                     <ul id='nav-mobile' className='right'>
                         <li>
