@@ -185,3 +185,4 @@
 {"level":"debug","message":"findTopPumpsAbsolute returned: 1 objects","timestamp":"2022-11-22T12:07:18.903Z"}
 {"level":"info","message":"sending message to Telegram with top pumps","timestamp":"2022-11-22T12:07:18.903Z"}
 {"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T12:13:36.599Z"}
+{"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-22T12:14:36.743Z"}
