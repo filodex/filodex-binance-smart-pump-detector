@@ -7,11 +7,7 @@ html {
     min-height: 100%;
 }
 body {
-    background: linear-gradient(
-        0deg,
-        rgb(77, 170, 132) 0%,
-        rgb(83, 127, 127) 100%
-    );
+    background: linear-gradient(0deg, rgb(77, 170, 132) 0%, rgb(83, 127, 127) 100%);
 }
 
 .col {
@@ -54,16 +50,16 @@ nav {
     font-size: large;
 }
 
-@media (max-width<700px) {
-    * {
-        margin: 0px !important;
-        padding: 0px !important;
-        align-items: center;
+@media only screen and (max-width: 600px) {
+    .hide-on-med-and-down-my {
+        display: none !important;
     }
-    .col {
-        width: 10%;
-        margin: 0px !important;
-        padding: 0px !important;
-        margin-right: 0rem;
+    .center-on-med-and-down {
+        float: none !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        align-self: center;
     }
 }

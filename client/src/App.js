@@ -11,17 +11,14 @@ function App() {
 
     return (
         <BrowserRouter>
-            <link
-                href='https://fonts.googleapis.com/icon?family=Material+Icons'
-                rel='stylesheet'
-            ></link>
+            <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'></link>
             <nav>
-                <div className='nav-wrapper'>
-                    <a href='#' className='brand-logo left'>
+                <div className='nav-wrapper center-on-med-and-down'>
+                    <a href='#' className='brand-logo left hide-on-med-and-down-my'>
                         Patience is a virtue
                         <i className='large material-icons'>ac_unit</i>
                     </a>
-                    <ul id='nav-mobile' className='right'>
+                    <ul id='nav-mobile' className='right center-on-med-and-down'>
                         <li>
                             <a href='/'>Pump detector</a>
                         </li>
