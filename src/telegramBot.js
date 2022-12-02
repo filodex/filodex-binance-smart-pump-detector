@@ -6,7 +6,7 @@ const chatId = '-1001822135725'
 const BOT_TOKEN = config.get('BOT_TOKEN')
 export const bot = new Telegraf(config.get('BOT_TOKEN'))
 
-bot.start((ctx) => ctx.reply('Welcome'))
+bot.start((ctx) => ctx.reply('👾 Welcome! 👾'))
 // bot.launch()
 
 async function test(params) {

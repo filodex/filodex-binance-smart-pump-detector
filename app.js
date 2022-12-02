@@ -52,9 +52,7 @@ pricesWriter.pricesHandlerEmitter.on('intervalEnded', async (prices) => {
     let topPumpsAbsoluteMoreThanX = findTopPumpsAbsolute(greatestDeviations, 5)
     logger.debug(
         `findTopPumpsAbsolute returned: ${
-            topPumpsAbsoluteMoreThanX[0]
-                ? topPumpsAbsoluteMoreThanX.length + ' objects'
-                : 'nothing(('
+            topPumpsAbsoluteMoreThanX[0] ? topPumpsAbsoluteMoreThanX.length + ' objects' : 'nothing(('
         }`
     )
     if (topPumpsAbsoluteMoreThanX[0]) {
@@ -92,25 +90,21 @@ function findTopPumpsAbsolute(greatestDeviations, absoluteDeviation) {
 
 function findTopPumpsAtrRelative(greatestDeviations) {
     try {
-        let atrRelativeGreatestDeviations =
-            calcAtrRelativeGreatestDeviations(greatestDeviations)
+        let atrRelativeGreatestDeviations = calcAtrRelativeGreatestDeviations(greatestDeviations)
 
-        let pumps = findHighestRelDeviationsMoreThan(
-            30,
-            atrRelativeGreatestDeviations
-        )
+        let pumps = findHighestRelDeviationsMoreThan(30, atrRelativeGreatestDeviations)
         return pumps
     } catch (error) {}
 }
 
 let bannedTickers = []
 function sendMessageToTg(arrWithObj) {
-    let strToSend = ''
+    let strToSend = '⏰ Time to trade!\n'
     for (const obj of arrWithObj) {
         if (bannedTickers.indexOf(obj.ticker) >= 0) {
             continue
         }
-        strToSend += `ticker: ${obj.ticker}, deviation: ${obj.deviation}\n`
+        strToSend += `🚀 ticker: ${obj.ticker}, deviation: ${obj.deviation}\n`
         bannedTickers.push(obj.ticker)
         setTimeout(() => {
             bannedTickers.splice(bannedTickers.indexOf(obj.ticker), 1)
@@ -131,11 +125,7 @@ function findHighestRelDeviationsMoreThan(x, atrRelativeGreatestDeviations) {
 }
 
 function calcAtrRelativeGreatestDeviations(greatestDeviations) {
-    let atrs = JSON.parse(
-        fs.readFileSync(
-            path.join(path.resolve(), 'src', 'BinanceFuturesAtrs.json')
-        )
-    )
+    let atrs = JSON.parse(fs.readFileSync(path.join(path.resolve(), 'src', 'BinanceFuturesAtrs.json')))
 
     let generalArray = []
     for (const timeframe in greatestDeviations) {
@@ -146,8 +136,7 @@ function calcAtrRelativeGreatestDeviations(greatestDeviations) {
                 let atrRelAbs = findAtr(obj.ticker, atrs)
                 obj.atrAbs = atrRelAbs.atr_abs
                 obj.atrRel = atrRelAbs.atr_relative
-                obj.deviationRelativeToAtr =
-                    Math.abs(obj.deviation) / obj.atrRel
+                obj.deviationRelativeToAtr = Math.abs(obj.deviation) / obj.atrRel
 
                 generalArray.push(obj)
             }
@@ -191,22 +180,11 @@ async function startExpress() {
 function useExpressHandlers() {
     app.use('/api', getStatistics)
     app.use('/api/prices', prices_router)
-    app.use(
-        '/countdowntimer',
-        express.static(path.join(__dirname, 'client', 'src', 'pages'))
-    )
+    app.use('/countdowntimer', express.static(path.join(__dirname, 'client', 'src', 'pages')))
     app.use('/', express.static(path.join(__dirname, 'client', 'build')))
 
     app.get('/countdowntimer', (req, res) => {
-        res.sendFile(
-            path.resolve(
-                __dirname,
-                'client',
-                'src',
-                'pages',
-                'countdownTimer.html'
-            )
-        )
+        res.sendFile(path.resolve(__dirname, 'client', 'src', 'pages', 'countdownTimer.html'))
     })
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
