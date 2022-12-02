@@ -66,3 +66,47 @@
 [27.11.2022, 18:49:13] [94mapp.js has been started...[39m
 [27.11.2022, 18:49:34] [94mapp.js has been started...[39m
 [28.11.2022, 17:51:54] [94mapp.js has been started...[39m
+[02.12.2022, 17:09:00] [94mapp.js has been started...[39m
+[02.12.2022, 17:14:20] [94mapp.js has been started...[39m
+[02.12.2022, 17:14:26] [94mapp.js has been started...[39m
+[02.12.2022, 17:15:59] [94mapp.js has been started...[39m
+[02.12.2022, 17:16:07] [94mapp.js has been started...[39m
+[02.12.2022, 17:16:12] [94mapp.js has been started...[39m
+[02.12.2022, 17:16:52] [94mapp.js has been started...[39m
+[02.12.2022, 17:16:52] uncaughtException ReferenceError: cors is not defined
+[02.12.2022, 17:17:10] [94mapp.js has been started...[39m
+[02.12.2022, 17:21:30] [94mapp.js has been started...[39m
+[02.12.2022, 17:21:46] [94mapp.js has been started...[39m
+[02.12.2022, 17:22:27] [94mapp.js has been started...[39m
+[02.12.2022, 17:22:39] [94mapp.js has been started...[39m
+[02.12.2022, 17:23:08] [94mapp.js has been started...[39m
+[02.12.2022, 17:23:51] [94mapp.js has been started...[39m
+[02.12.2022, 17:23:58] [94mapp.js has been started...[39m
+[02.12.2022, 17:24:20] [94mapp.js has been started...[39m
+[02.12.2022, 17:24:40] [94mapp.js has been started...[39m
+[02.12.2022, 17:25:28] [94mapp.js has been started...[39m
+[02.12.2022, 17:25:28] uncaughtException ReferenceError: authRouter is not defined
+[02.12.2022, 17:25:56] [94mapp.js has been started...[39m
+[02.12.2022, 17:25:56] uncaughtException ReferenceError: authRouter is not defined
+[02.12.2022, 17:26:13] [94mapp.js has been started...[39m
+[02.12.2022, 17:26:13] uncaughtException ReferenceError: authRouter is not defined
+[02.12.2022, 17:26:57] [94mapp.js has been started...[39m
+[02.12.2022, 17:28:10] [94mapp.js has been started...[39m
+[02.12.2022, 17:29:25] [94mapp.js has been started...[39m
+[02.12.2022, 17:30:08] [94mapp.js has been started...[39m
+[02.12.2022, 17:30:21] [94mapp.js has been started...[39m
+[02.12.2022, 17:30:35] [94mapp.js has been started...[39m
+[02.12.2022, 17:32:17] [94mapp.js has been started...[39m
+[02.12.2022, 17:37:06] [94mapp.js has been started...[39m
+[02.12.2022, 17:39:43] [94mapp.js has been started...[39m
+[02.12.2022, 17:41:16] [94mapp.js has been started...[39m
+[02.12.2022, 17:41:27] [94mapp.js has been started...[39m
+[02.12.2022, 17:41:34] [94mapp.js has been started...[39m
+[02.12.2022, 17:41:46] [94mapp.js has been started...[39m
+[02.12.2022, 17:42:09] [94mapp.js has been started...[39m
+[02.12.2022, 17:42:36] [94mapp.js has been started...[39m
+[02.12.2022, 17:42:49] [94mapp.js has been started...[39m
+[02.12.2022, 17:42:54] [94mapp.js has been started...[39m
+[02.12.2022, 17:42:59] [94mapp.js has been started...[39m
+[02.12.2022, 17:43:03] [94mapp.js has been started...[39m
+[02.12.2022, 17:43:11] [94mapp.js has been started...[39m

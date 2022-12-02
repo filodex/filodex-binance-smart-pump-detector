@@ -9,15 +9,18 @@ import chalk from 'chalk'
 import express from 'express'
 import path, { format } from 'path'
 import config from 'config'
-import prices_router from './routes/prices.routes.js'
+import prices_router from './src/routes/prices.routes.js'
+import authRouter from './src/routes/auth.routes.js'
 import axios from 'axios'
 import { EventEmitter } from 'events'
 import { logToFile } from './src/logger.js'
 import fs from 'fs'
 import { logger } from './src/winston.js'
-import { sendMessageToChannel } from './src/telegramBot.js'
+import { sendMessageToChannel } from './src/telegram/telegramBot.js'
 import { Format } from 'telegraf'
 import { getStatistics } from './src/middlewares.js'
+import cookieParser from 'cookie-parser'
+import cors from 'cors'
 
 logToFile(chalk.blueBright('app.js has been started...'))
 
@@ -46,15 +49,12 @@ await startExpress()
 // Затем каждую минуту, когда цены получены вызываю событие intervalEnded, вместе с которым получаю массив prices [[{},{}],[]]
 // Этот массив имеет макс. длину 20, и сожержит массивы с ценами за каждую минуту
 let pricesWriter = await activatePricesWriter() //returns event handler
+
 pricesWriter.pricesHandlerEmitter.on('intervalEnded', async (prices) => {
     greatestDeviations = await findGreatestDeviations(prices) // просто каждую минуту обновляю greatestDeviations и затем пробрасываю в prices.routes
 
     let topPumpsAbsoluteMoreThanX = findTopPumpsAbsolute(greatestDeviations, 5)
-    logger.debug(
-        `findTopPumpsAbsolute returned: ${
-            topPumpsAbsoluteMoreThanX[0] ? topPumpsAbsoluteMoreThanX.length + ' objects' : 'nothing(('
-        }`
-    )
+
     if (topPumpsAbsoluteMoreThanX[0]) {
         logger.info('sending message to Telegram with top pumps')
         sendMessageToTg(topPumpsAbsoluteMoreThanX)
@@ -178,6 +178,10 @@ async function startExpress() {
 }
 
 function useExpressHandlers() {
+    app.use(express.json())
+    app.use(cookieParser())
+    app.use(cors())
+    app.use('/auth', authRouter)
     app.use('/api', getStatistics)
     app.use('/api/prices', prices_router)
     app.use('/countdowntimer', express.static(path.join(__dirname, 'client', 'src', 'pages')))

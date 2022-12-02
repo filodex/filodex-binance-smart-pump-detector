@@ -43,24 +43,15 @@ export default function Api(opt) {
     this.getAccountInfo = async () => {
         const url_unsigned =
             API_URL +
-            `/api/v3/account?recvWindow=5000&timestamp=${await (
-                await this.getServerTime()
-            ).data.serverTime}`
+            `/api/v3/account?recvWindow=5000&timestamp=${await (await this.getServerTime()).data.serverTime}`
 
-        const url = `${url_unsigned}&signature=${createSignature(
-            url_unsigned,
-            this.SECRET
-        )}`
+        const url = `${url_unsigned}&signature=${createSignature(url_unsigned, this.SECRET)}`
 
         let res = await axios({ method: 'GET', url, headers: HEADERS })
         return res
     }
     this.getAccountSnapshot = async () => {
-        let url =
-            API_URL +
-            `/sapi/v1/accountSnapshot?type=SPOT&timestamp=${await createTimeStamp(
-                this
-            )}`
+        let url = API_URL + `/sapi/v1/accountSnapshot?type=SPOT&timestamp=${await createTimeStamp(this)}`
         const signature = createSignature(url, this.SECRET)
         url = url + `&signature=${signature}`
         let res = await axios({ method: 'GET', url, headers: HEADERS })
@@ -69,9 +60,7 @@ export default function Api(opt) {
     this.getFundingAccountSnapshot = async () => {
         let url =
             API_URL +
-            `/sapi/v1/asset/get-funding-asset?needBtcValuation=true&timestamp=${await createTimeStamp(
-                this
-            )}`
+            `/sapi/v1/asset/get-funding-asset?needBtcValuation=true&timestamp=${await createTimeStamp(this)}`
         const signature = createSignature(url, this.SECRET)
         url = url + `&signature=${signature}`
 
@@ -94,13 +83,7 @@ export default function Api(opt) {
         let res = await axios({ method: 'GET', url, headers: HEADERS })
         return res
     }
-    this.getCandles = async ({
-        symbol = 'BTCUSDT',
-        interval = '1m',
-        startTime,
-        endTime,
-        limit = 500,
-    }) => {
+    this.getCandles = async ({ symbol = 'BTCUSDT', interval = '1m', startTime, endTime, limit = 500 }) => {
         // [0] - ранняя дата [499] - поздняя дата
         let url = API_URL + '/api/v3/klines'
         url += `?symbol=${symbol}&interval=${interval}&limit=${limit}${

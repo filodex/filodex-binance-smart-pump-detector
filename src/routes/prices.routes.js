@@ -1,5 +1,5 @@
 import { request, Router } from 'express'
-import { throwGreatestDeviations_toEndpoint } from '../app.js'
+import { throwGreatestDeviations_toEndpoint } from '../../app.js'
 
 const router = Router()
 
