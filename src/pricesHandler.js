@@ -5,8 +5,7 @@ import Api from './binanceApi.js'
 import config from 'config'
 import fs from 'fs'
 import path from 'path'
-// РАСКОММЕНТИТЬ!!!!
-//import { writePrices } from './postgres.js'
+import { writePrices } from './postgres.js'
 import chalk from 'chalk'
 import { EventEmitter } from 'events'
 
@@ -39,9 +38,7 @@ export async function getFuturesCoinsPrices() {
 
 //pricesHandler раз в минуту получит цены, запишет в тиблицу и сохранит себе, чтоб потом сравнить
 export async function activatePricesWriter() {
-    console.log(
-        chalk.blueBright('main interval of getting and writing prices started')
-    )
+    console.log(chalk.blueBright('main interval of getting and writing prices started'))
     let oneMinuteInterval = setInterval(async () => {
         if (pricesStore.length > 20) {
             pricesStore.shift()
@@ -75,10 +72,7 @@ export async function activatePricesWriter() {
 // pricesStore_frozen == [[{symbol:,price:},{}],[]]
 export async function findGreatestDeviations(pricesStore_frozen) {
     if (pricesStore_frozen.length < 3) {
-        console.log(
-            chalk.bgBlueBright('not enough prices to compare, length=='),
-            pricesStore_frozen.length
-        )
+        console.log(chalk.bgBlueBright('not enough prices to compare, length=='), pricesStore_frozen.length)
         // console.log(
         //     // chalk.red('pricesStore_frozen------------'),
         //     pricesStore_frozen
@@ -104,10 +98,7 @@ export async function findGreatestDeviations(pricesStore_frozen) {
 
     //1min
     for (const i in lastPrices) {
-        let deviation =
-            (Number(lastPrices[i].price) / Number(prev1MinPrices[i].price) -
-                1) *
-            100
+        let deviation = (Number(lastPrices[i].price) / Number(prev1MinPrices[i].price) - 1) * 100
         deviations_1min.push({
             ticker: lastPrices[i].symbol,
             deviation,
@@ -120,10 +111,7 @@ export async function findGreatestDeviations(pricesStore_frozen) {
     //3min
     if (prev3MinPrices) {
         for (const i in lastPrices) {
-            let deviation =
-                (Number(lastPrices[i].price) / Number(prev3MinPrices[i].price) -
-                    1) *
-                100
+            let deviation = (Number(lastPrices[i].price) / Number(prev3MinPrices[i].price) - 1) * 100
             deviations_3min.push({
                 ticker: lastPrices[i].symbol,
                 deviation,
@@ -136,10 +124,7 @@ export async function findGreatestDeviations(pricesStore_frozen) {
     //5min
     if (prev5MinPrices) {
         for (const i in lastPrices) {
-            let deviation =
-                (Number(lastPrices[i].price) / Number(prev5MinPrices[i].price) -
-                    1) *
-                100
+            let deviation = (Number(lastPrices[i].price) / Number(prev5MinPrices[i].price) - 1) * 100
             deviations_5min.push({
                 ticker: lastPrices[i].symbol,
                 deviation,
@@ -163,10 +148,7 @@ export async function findGreatestDeviations(pricesStore_frozen) {
         }
         let deviations = []
         for (const i in lastPrices) {
-            let deviation =
-                (Number(lastPrices[i].price) / Number(prevPrices[i].price) -
-                    1) *
-                100
+            let deviation = (Number(lastPrices[i].price) / Number(prevPrices[i].price) - 1) * 100
             deviations.push({
                 ticker: lastPrices[i].symbol,
                 deviation,
@@ -246,13 +228,8 @@ export async function calcAtrForAllCoinsAndWriteToFile() {
     }
 
     atrs.push({ updateTime: new Date() })
-    fs.writeFileSync(
-        path.join(path.resolve(), 'src', 'BinanceFuturesAtrs.json'),
-        JSON.stringify(atrs, '', 2)
-    )
-    console.log(
-        chalk.blue("Calculating atr's done! And already written to file")
-    )
+    fs.writeFileSync(path.join(path.resolve(), 'src', 'BinanceFuturesAtrs.json'), JSON.stringify(atrs, '', 2))
+    console.log(chalk.blue("Calculating atr's done! And already written to file"))
 
     async function getCandles_local(ticker) {
         try {
@@ -281,8 +258,7 @@ export async function calcAtrForAllCoinsAndWriteToFile() {
     function calcRelativeAtr(candles, atr_abs) {
         return (
             Math.floor(
-                ((Number(candles[candles.length - 1][4]) + atr_abs) /
-                    Number(candles[candles.length - 1][4]) -
+                ((Number(candles[candles.length - 1][4]) + atr_abs) / Number(candles[candles.length - 1][4]) -
                     1) *
                     10000
             ) / 100
