@@ -41,13 +41,28 @@ nav {
 
 .timer {
     z-index: 100;
-    color: wheat;
+    color: #ffffffd5;
     position: fixed;
     left: 1em;
     bottom: 1em;
     background-color: rgb(81, 76, 74);
     padding: 10px;
     font-size: large;
+}
+
+.popupTelegramMessageWindow-hidden {
+    display: none;
+}
+
+.popupTelegramMessageWindow {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    margin-left: -200px;
+    margin-top: -200px;
+    background-color: rgba(23, 160, 96, 0.782);
+    left: 50%;
+    top: 50%;
 }
 
 @media only screen and (max-width: 600px) {

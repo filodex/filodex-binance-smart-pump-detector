@@ -1,12 +1,15 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback, memo } from 'react'
 import { useHttp } from '../hooks/http.hook.js'
 import M from 'materialize-css'
 
 let isIntervalStarted = false
 
-export function PricesPage() {
+export const PricesPage = memo(() => {
+    // каждый setState ререндерит компонент
     const [pricesArray, setPricesArray] = useState([])
     const [timer, setTimer] = useState(60)
+    const [popupHidden, setPopupHidden] = useState(true)
+
     return (
         <div className='page'>
             <div>
@@ -21,9 +24,41 @@ export function PricesPage() {
                 />
             </div>
             <PricesUpdateTimer timer={timer} setTimer={setTimer} />
+            <div className='fixed-action-btn'>
+                <button
+                    onClick={() => {
+                        buttonClickHandle(setPopupHidden)
+                    }}
+                    className='btn-floating btn-large dark'
+                >
+                    <i className='large material-icons'>mode_edit</i>
+                </button>
+                <ul>
+                    <li>
+                        <a className='btn-floating red'>
+                            <i className='material-icons'>insert_chart</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <PopupTelegramMessageWindow popupHidden={popupHidden} />
         </div>
     )
+})
+
+function buttonClickHandle(setPopupHidden) {
+    setPopupHidden((prev) => !prev)
 }
+
+const PopupTelegramMessageWindow = memo((props) => {
+    return (
+        <div
+            className={props.popupHidden ? 'popupTelegramMessageWindow-hidden' : 'popupTelegramMessageWindow'}
+        >
+            i'm pop-up window
+        </div>
+    )
+})
 
 function DeviationsArray(props) {
     if (!props.array) {
@@ -61,7 +96,7 @@ function DeviationsRow(props) {
     }
 }
 
-function DeviationsRows(props) {
+const DeviationsRows = memo((props) => {
     const { request } = useHttp()
 
     async function getPricesArray() {
@@ -124,7 +159,7 @@ function DeviationsRows(props) {
             </div>
         </div>
     )
-}
+})
 
 function arrWithObjToJSXList(arrWithObj) {
     let liList = []
