@@ -18,9 +18,10 @@ import fs from 'fs'
 import { logger } from './src/winston.js'
 import { sendMessageToChannel } from './src/telegram/telegramBot.js'
 import { Format } from 'telegraf'
-import { getStatistics } from './src/middlewares.js'
+import { getStatistics } from './src/middlewares/middlewares.js'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
+import errorMiddlewares from './src/middlewares/error.middlewares.js'
 
 logToFile(chalk.blueBright('app.js has been started...'))
 
@@ -186,6 +187,7 @@ function useExpressHandlers() {
     app.use('/api/prices', prices_router)
     app.use('/countdowntimer', express.static(path.join(__dirname, 'client', 'src', 'pages')))
     app.use('/', express.static(path.join(__dirname, 'client', 'build')))
+    app.use(errorMiddlewares)
 
     app.get('/countdowntimer', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'client', 'src', 'pages', 'countdownTimer.html'))

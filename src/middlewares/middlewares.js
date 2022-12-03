@@ -1,5 +1,5 @@
 import express from 'express'
-import { logger } from './winston.js'
+import { logger } from '../winston.js'
 
 let requestsCount = 0
 let requestsCountADay = 0
@@ -20,15 +20,9 @@ export function getStatistics(req, res, next) {
 
 // count when midnight starts
 let nowDay = new Date()
-let nextDay = new Date(
-    nowDay.getFullYear(),
-    nowDay.getMonth(),
-    nowDay.getDate() + 1
-)
+let nextDay = new Date(nowDay.getFullYear(), nowDay.getMonth(), nowDay.getDate() + 1)
 let diff = nextDay - nowDay
-console.log(
-    `timeout that starts startDayStatisticsInterval() started, new day in ${diff}`
-)
+console.log(`timeout that starts startDayStatisticsInterval() started, new day in ${diff}`)
 
 setTimeout(() => {
     startDayStatisticsInterval()

@@ -191,3 +191,11 @@
 {"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-28T14:54:56.023Z"}
 {"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-28T14:55:55.036Z"}
 {"level":"debug","message":"findTopPumpsAbsolute returned: nothing((","timestamp":"2022-11-28T14:56:55.081Z"}
+{"level":"info","message":"sending message to Telegram with top pumps","timestamp":"2022-12-03T07:56:52.922Z"}
+{"level":"info","message":"sending message to Telegram with top pumps","timestamp":"2022-12-03T08:11:53.040Z"}
+{"level":"info","message":"sending message to Telegram with top pumps","timestamp":"2022-12-03T08:13:53.129Z"}
+{"level":"info","message":"sending message to Telegram with top pumps","timestamp":"2022-12-03T08:14:53.252Z"}
+{"level":"info","message":"sending message to Telegram with top pumps","timestamp":"2022-12-03T08:15:54.065Z"}
+{"level":"info","message":"sending message to Telegram with top pumps","timestamp":"2022-12-03T08:43:19.341Z"}
+{"level":"info","message":"sending message to Telegram with top pumps","timestamp":"2022-12-03T08:59:35.580Z"}
+{"level":"info","message":"sending message to Telegram with top pumps","timestamp":"2022-12-03T09:00:35.346Z"}
