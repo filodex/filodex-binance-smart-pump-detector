@@ -1,8 +1,15 @@
 import userService from '../service/user.service.js'
+import { validationResult } from 'express-validator'
+import AuthError from '../exceptions/auth.exceptions.js'
 
 const UserController = {
     async registration(req, res, next) {
         try {
+            const errors = validationResult(req)
+            if (!errors.isEmpty()) {
+                return next(AuthError.BadRequest('Validation failed', errors.array()))
+            }
+
             const { login, password } = req.body
             const userData = await userService.registration(login, password)
             res.cookie('refreshToken', userData.tokens.refreshToken, {
@@ -17,6 +24,13 @@ const UserController = {
 
     async login(req, res, next) {
         try {
+            const { login, password } = req.body
+            const userData = await userService.login(login, password)
+            res.cookie('refreshToken', userData.tokens.refreshToken, {
+                maxAge: 30 * 24 * 60 * 60 * 1000,
+                httpOnly: true,
+            })
+            return res.json(userData)
         } catch (error) {
             next(error)
         }

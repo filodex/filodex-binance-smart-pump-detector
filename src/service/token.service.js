@@ -3,6 +3,10 @@ import config from 'config'
 import dbHandler from '../database/dbHandler.js'
 
 class TokenService {
+    /**
+     * @param {{login}} payload
+     * @returns {accessToken, refreshToken}
+     */
     generateTokens(payload) {
         const accessToken = jwt.sign(payload, config.get('ACCESS_SECRET'), { expiresIn: 60 * 30 })
         const refreshToken = jwt.sign(payload, config.get('REFRESH_SECRET'), { expiresIn: 60 * 60 * 24 })

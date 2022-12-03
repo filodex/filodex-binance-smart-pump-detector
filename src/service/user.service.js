@@ -23,6 +23,21 @@ class UserService {
 
         return { login, tokens }
     }
+
+    async login(login, password) {
+        const user = await dbHandler.findOne(login)
+        if (!user) {
+            throw AuthError.BadRequest('No user found with such login')
+        }
+
+        const isPassEquals = await bcrypt.compare(password, String(user.hashPassword))
+        if (!isPassEquals) {
+            throw AuthError.BadRequest('Wrong password')
+        }
+        const tokens = tokenService.generateTokens({ login })
+        await tokenService.saveToken(login, tokens.refreshToken)
+        return { login, tokens }
+    }
 }
 
 export default new UserService()

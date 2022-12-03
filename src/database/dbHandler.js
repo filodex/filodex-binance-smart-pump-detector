@@ -1,7 +1,7 @@
 // TODO: перенести в отдельный файл + gitignore
 const users = {}
 
-users.log = { login: 'log', hashPassword: 'pass', tokenData: { refreshToken: undefined } }
+// users.log = { login: 'log', hashPassword: 'pass', tokenData: { refreshToken: undefined } }
 
 class DbHandler {
     async findOne(login) {
