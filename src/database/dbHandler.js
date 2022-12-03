@@ -23,6 +23,21 @@ class DbHandler {
     async refreshToken(login, token) {
         users[login].tokenData = { refreshToken: token }
     }
+
+    async deleteTokens(refreshToken) {
+        const login = this.findByRefreshToken(refreshToken)
+        console.log('login: ', login)
+        users[login].tokenData = {}
+        return login
+    }
+
+    findByRefreshToken(refreshToken) {
+        for (const key in users) {
+            if (users[key].tokenData.refreshToken === refreshToken) {
+                return key
+            }
+        }
+    }
 }
 
 export default new DbHandler()

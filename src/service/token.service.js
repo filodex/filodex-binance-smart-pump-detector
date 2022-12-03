@@ -19,6 +19,11 @@ class TokenService {
         await dbHandler.refreshToken(login, refreshToken)
         return refreshToken
     }
+
+    async removeToken(refreshToken) {
+        const tokenData = dbHandler.deleteTokens(refreshToken)
+        return tokenData
+    }
 }
 
 export default new TokenService()
