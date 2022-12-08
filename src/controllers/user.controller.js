@@ -23,6 +23,7 @@ const UserController = {
     },
 
     async login(req, res, next) {
+        console.log('ip ', req.ip)
         try {
             const { login, password } = req.body
             const userData = await userService.login(login, password)
@@ -50,9 +51,9 @@ const UserController = {
     async refresh(req, res, next) {
         try {
             const { refreshToken } = req.cookies
-            console.log('refresh token', refreshToken)
+            // console.log('refresh token', refreshToken)
             const userData = await userService.refresh(refreshToken)
-            console.log('userData in controller', userData)
+            // console.log('userData in controller', userData)
             res.cookie('refreshToken', userData.tokens.refreshToken, {
                 maxAge: 30 * 24 * 60 * 60 * 1000,
                 httpOnly: true,
