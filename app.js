@@ -22,6 +22,7 @@ import { getStatistics } from './src/middlewares/middlewares.js'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
 import errorMiddlewares from './src/middlewares/error.middlewares.js'
+import authMiddleware from './src/middlewares/auth.middleware.js'
 
 logToFile(chalk.blueBright('app.js has been started...'))
 

@@ -1,7 +1,7 @@
 // TODO: перенести в отдельный файл + gitignore
 const users = {}
 
-// users.log = { login: 'log', hashPassword: 'pass', tokenData: { refreshToken: undefined } }
+// users.test = { login: 'test', hashPassword: 'pass', tokenData: { refreshToken: undefined } }
 
 class DbHandler {
     async findOne(login) {
@@ -38,6 +38,10 @@ class DbHandler {
             }
         }
     }
+
+    async getAllUsers() {
+        return users
+    }
 }
 
 export default new DbHandler()
@@ -50,6 +54,6 @@ class User {
     }
 }
 
-// setTimeout(() => {
-//     console.log(users)
-// }, 1000)
+setTimeout(() => {
+    console.log(users)
+}, 10000)

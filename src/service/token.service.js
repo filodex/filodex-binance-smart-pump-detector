@@ -24,6 +24,19 @@ class TokenService {
         const tokenData = dbHandler.deleteTokens(refreshToken)
         return tokenData
     }
+
+    async validateAcceesToken(token) {
+        try {
+            const userData = jwt.verify(token, config.get('ACCESS_SECRET'))
+            return userData
+        } catch (error) {}
+    }
+    async validateRefreshToken(token) {
+        try {
+            const userData = jwt.verify(token, config.get('REFRESH_SECRET'))
+            return userData
+        } catch (error) {}
+    }
 }
 
 export default new TokenService()

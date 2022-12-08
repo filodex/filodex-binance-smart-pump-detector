@@ -115,7 +115,7 @@ const DeviationsRows = memo((props) => {
                     M.toast({ html: 'Server is loading, please wait...' })
                     return
                 }
-                console.log(res)
+                // console.log(res)
                 props.setPricesArray(res)
             })
             .catch((error) => {

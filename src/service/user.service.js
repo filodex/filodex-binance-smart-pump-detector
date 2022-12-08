@@ -43,6 +43,33 @@ class UserService {
         const token = await tokenService.removeToken(refreshToken)
         return token
     }
+
+    async refresh(refreshToken) {
+        console.log('refresh token in service', refreshToken)
+        if (!refreshToken) {
+            throw AuthError.UnauthorizedError()
+        }
+
+        const userData = tokenService.validateRefreshToken(refreshToken)
+        console.log('userData', userData)
+        const { login } = await userData
+        const tokenFromDB = (await dbHandler.findOne(login))?.tokenData?.refreshToken
+        console.log('login from userData', login)
+        console.log('finOne returns', await dbHandler.findOne(login))
+        console.log('token from db', tokenFromDB)
+
+        if (!userData || !tokenFromDB) {
+            throw AuthError.UnauthorizedError()
+        }
+
+        const tokens = tokenService.generateTokens({ login })
+        await tokenService.saveToken(login, tokens.refreshToken)
+        return { login, tokens }
+    }
+
+    async getAllUsers() {
+        return await dbHandler.getAllUsers()
+    }
 }
 
 export default new UserService()
@@ -72,3 +99,6 @@ async function testUserService() {
     //console.log(user2)
 }
 //testUserService()
+
+const us = new UserService()
+us.registration('test', '000000')
