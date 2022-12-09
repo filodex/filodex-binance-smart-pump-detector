@@ -10,7 +10,9 @@ export default function (req, res, next) {
 
         const accessToken = authHeader.split(' ')[1]
 
-        if (!accessToken) {
+        if (!accessToken || accessToken === 'null') {
+            console.log('Error отработал')
+            console.log('accessToken', accessToken)
             return next(AuthError.UnauthorizedError())
         }
 

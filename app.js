@@ -182,7 +182,8 @@ async function startExpress() {
 function useExpressHandlers() {
     app.use(express.json())
     app.use(cookieParser())
-    app.use(cors())
+    // TODO change url to url from config
+    app.use(cors({ credentials: true, origin: 'http://localhost:3000' }))
     app.use('/auth', authRouter)
     app.use('/api', getStatistics)
     app.use('/api/prices', prices_router)

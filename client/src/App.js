@@ -28,14 +28,13 @@ function App() {
                         <li>
                             <a href='/welcome'>Welcome</a>
                         </li>
+                        <li>
+                            <a href='/login'>Login</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
-            <Routes>
-                <Route path='/welcome' element={<WelcomePage />} />
-                <Route path='/' element={<PricesPage />} />
-                <Route path='*' element={<Navigate to='/' />} />
-            </Routes>
+            {useRoutes()}
         </BrowserRouter>
     )
 }
