@@ -13,7 +13,7 @@ export default class AuthService {
                 AuthService.isAuthenticated = true
                 localStorage.setItem('token', JSON.stringify(res.data.tokens.accessToken))
             }
-            console.log(res)
+            // console.log(res)
         })
         return res
     }
@@ -26,20 +26,21 @@ export default class AuthService {
                 AuthService.isAuthenticated = true
                 localStorage.setItem('token', JSON.stringify(res.data.tokens.accessToken))
             }
-            console.log(res)
+            // console.log(res)
         })
         return res
     }
 
     static async logout() {
         AuthService.user = undefined
+        AuthService.isAuthenticated = false
         localStorage.removeItem('token')
         return axiosAuth.post('/logout')
     }
 
     static async refresh() {
         const res = await axios.get(AUTH_API_URL + '/refresh', { withCredentials: true })
-        console.log('refresh()', res)
+        // console.log('refresh()', res)
         if (res.statusText == 'OK') {
             AuthService.user = res.data
             AuthService.isAuthenticated = true

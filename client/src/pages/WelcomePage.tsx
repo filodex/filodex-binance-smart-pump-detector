@@ -39,17 +39,7 @@ export const WelcomePage = () => {
     return (
         <div className='row'>
             <div className='col s6 offset-s3'>
-                <h2>Welcome Page</h2>
                 <Clock />
-                <div className='card blue-grey darken-1'>
-                    <div className='card-content white-text'>
-                        <span className='card-title'>Card Title</span>
-                        <p>Go to Prices</p>
-                    </div>
-                    <div className='card-action'>
-                        <a href='/'>Prices</a>
-                    </div>
-                </div>
             </div>
         </div>
     )

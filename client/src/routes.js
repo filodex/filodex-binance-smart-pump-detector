@@ -2,7 +2,7 @@ import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { PricesPage } from './pages/PricesPage'
 import { WelcomePage } from './pages/WelcomePage.tsx'
-import { AuthPage } from './pages/authPage.js'
+import { AuthPage } from './pages/AuthPage.js'
 
 export const useRoutes = () => {
     return (

@@ -20,19 +20,20 @@ export const LoginForm = (props) => {
         }
     }, [])
 
-    console.log(isAuthenticated)
-
     return (
         <div>
             <input
+                className='input-field'
                 onChange={(e) => {
                     setLogin(e.target.value)
+                    // console.log('isAuthenticated', AuthService.isAuthenticated)
                 }}
                 value={login}
                 type='text'
                 placeholder='Login'
             />
             <input
+                className='input-field'
                 onChange={(e) => {
                     setPassword(e.target.value)
                 }}
@@ -41,33 +42,45 @@ export const LoginForm = (props) => {
                 placeholder='Password'
             />
             <button
+                className='btn'
                 onClick={() => {
                     AuthService.login(login, password)
+                    window.location.reload()
                 }}
             >
                 Login
             </button>
             <button
+                className='btn'
                 onClick={() => {
                     AuthService.registration(login, password)
+                    window.location.reload()
                 }}
             >
                 Registration
             </button>
+
             <button
-                onClick={() => {
-                    UserService.fetchUsers().then((users) => console.log(users.data))
-                }}
-            >
-                users
-            </button>
-            <button
+                className='btn'
                 onClick={() => {
                     AuthService.logout()
+                    window.location.reload()
                 }}
             >
                 Logout
             </button>
+            {AuthService?.user?.login == 'filodex' ? (
+                <button
+                    className='btn'
+                    onClick={() => {
+                        // UserService.fetchUsers().then((users) => console.log(users.data))
+                    }}
+                >
+                    users
+                </button>
+            ) : (
+                ''
+            )}
         </div>
     )
 }

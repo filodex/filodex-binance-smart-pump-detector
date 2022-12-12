@@ -28,7 +28,9 @@ logToFile(chalk.blueBright('app.js has been started...'))
 
 process.on('uncaughtException', (err, origin) => {
     logToFile(`uncaughtException ${err}`)
-    process.exit(1)
+})
+process.on('unhandledRejection', (err, origin) => {
+    console.log('uncaughtRejection', err)
 })
 
 let greatestDeviations = []

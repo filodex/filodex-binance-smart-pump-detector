@@ -488,3 +488,6 @@
 [09.12.2022, 13:39:19] [94mapp.js has been started...[39m
 [09.12.2022, 13:44:34] [94mapp.js has been started...[39m
 [09.12.2022, 13:45:57] [94mapp.js has been started...[39m
+[12.12.2022, 09:52:46] [94mapp.js has been started...[39m
+[12.12.2022, 09:57:51] uncaughtException Error [ERR_HTTP_HEADERS_SENT]: Cannot remove headers after they are sent to the client
+[12.12.2022, 10:03:42] [94mapp.js has been started...[39m
