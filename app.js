@@ -103,7 +103,7 @@ function findTopPumpsAtrRelative(greatestDeviations) {
 
 let bannedTickers = []
 function sendMessageToTg(arrWithObj) {
-    let strToSend = '⏰ Time to trade!\n'
+    let strToSend = ''
     for (const obj of arrWithObj) {
         if (bannedTickers.indexOf(obj.ticker) >= 0) {
             continue
