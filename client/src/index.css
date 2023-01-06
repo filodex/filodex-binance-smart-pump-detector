@@ -78,3 +78,11 @@ nav {
         align-self: center;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .col {
+        margin: 5px !important;
+        padding: 5px 5px 5px 20% !important;
+        width: 100% !important;
+    }
+}
