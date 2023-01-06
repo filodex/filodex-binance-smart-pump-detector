@@ -65,7 +65,7 @@ nav {
     top: 50%;
 }
 
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
     .hide-on-med-and-down-my {
         display: none !important;
     }
@@ -79,7 +79,7 @@ nav {
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media (max-width: 500px) {
     .col {
         margin: 5px !important;
         padding: 5px 5px 5px 20% !important;
