@@ -8,7 +8,7 @@ export const useRoutes = () => {
     return (
         <Routes>
             <Route path='/welcome' element={<WelcomePage />} />
-            <Route path='/login' element={<AuthPage />} />
+            {/* <Route path='/login' element={<AuthPage />} /> */}
             <Route path='/' element={<PricesPage />} />
             <Route path='*' element={<Navigate to='/' />} />
         </Routes>
