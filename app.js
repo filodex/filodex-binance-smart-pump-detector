@@ -108,7 +108,7 @@ function sendMessageToTg(arrWithObj) {
         if (bannedTickers.indexOf(obj.ticker) >= 0) {
             continue
         }
-        strToSend += `🚀 ticker: ${obj.ticker}, deviation: ${obj.deviation}\n`
+        strToSend += `🚀 High deviation.\nticker: ${obj.ticker}, deviation: ${obj.deviation}%\n`
         bannedTickers.push(obj.ticker)
         setTimeout(() => {
             bannedTickers.splice(bannedTickers.indexOf(obj.ticker), 1)
