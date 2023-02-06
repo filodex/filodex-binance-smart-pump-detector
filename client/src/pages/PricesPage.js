@@ -24,7 +24,7 @@ export const PricesPage = memo(() => {
                 />
             </div>
             <PricesUpdateTimer timer={timer} setTimer={setTimer} />
-            <div className='fixed-action-btn'>
+            {/* <div className='fixed-action-btn'>
                 <button
                     onClick={() => {
                         buttonClickHandle(setPopupHidden)
@@ -41,7 +41,7 @@ export const PricesPage = memo(() => {
                     </li>
                 </ul>
             </div>
-            <PopupTelegramMessageWindow popupHidden={popupHidden} />
+            <PopupTelegramMessageWindow popupHidden={popupHidden} /> */}
         </div>
     )
 })

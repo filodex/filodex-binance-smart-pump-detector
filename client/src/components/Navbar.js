@@ -32,13 +32,13 @@ export const Navbar = () => {
                     <li>
                         <a href='/countdowntimer'>Countdown</a>
                     </li>
-                    <li>
+                    {/* <li>
                         {isAuthenticated ? (
                             <a href='/login'>{AuthService.user.login}</a>
                         ) : (
                             <a href='/login'>Login</a>
                         )}
-                    </li>
+                    </li> */}
                 </ul>
             </div>
         </nav>
