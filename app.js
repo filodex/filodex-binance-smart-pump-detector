@@ -35,6 +35,7 @@ process.on('unhandledRejection', (err, origin) => {
 
 let greatestDeviations = []
 let topPumpsAtrRelative = []
+let bannedTickers = new Set()
 
 const __dirname = path.resolve()
 
@@ -61,7 +62,7 @@ pricesWriter.pricesHandlerEmitter.on('intervalEnded', async (prices) => {
 
     if (topPumpsAbsoluteMoreThanX[0]) {
         logger.info('sending message to Telegram with top pumps')
-        sendMessageToTg(topPumpsAbsoluteMoreThanX)
+        sendMessageToTgAndHandleBanned(topPumpsAbsoluteMoreThanX)
     }
 
     // не работает
@@ -101,21 +102,35 @@ function findTopPumpsAtrRelative(greatestDeviations) {
     } catch (error) {}
 }
 
-let bannedTickers = []
-function sendMessageToTg(arrWithObj) {
+function sendMessageToTgAndHandleBanned(arrWithObj) {
     let strToSend = ''
     for (const obj of arrWithObj) {
-        if (bannedTickers.indexOf(obj.ticker) >= 0) {
+        if (isTickerBanned(obj.ticker)) {
             continue
         }
+
+        bannedTickers.add(obj.ticker)
+
+        setTimeoutToDeleteBannedTicker(obj.ticker)
+
         strToSend += `🚀 High deviation.\nticker: ${obj.ticker}, deviation: ${obj.deviation}%\n`
-        bannedTickers.push(obj.ticker)
-        setTimeout(() => {
-            bannedTickers.splice(bannedTickers.indexOf(obj.ticker), 1)
-        }, 300000)
     }
     console.log(chalk.bgGray('strTosend is:', strToSend))
     sendMessageToChannel(strToSend)
+}
+
+function isTickerBanned(ticker) {
+    if (bannedTickers.has(ticker)) {
+        return true
+    } else {
+        return false
+    }
+}
+
+function setTimeoutToDeleteBannedTicker(ticker) {
+    setTimeout(() => {
+        bannedTickers.delete(ticker)
+    }, 1000 * 60 * 60 * 2)
 }
 
 function findHighestRelDeviationsMoreThan(x, atrRelativeGreatestDeviations) {
