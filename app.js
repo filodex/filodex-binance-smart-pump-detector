@@ -103,6 +103,8 @@ function findTopPumpsAtrRelative(greatestDeviations) {
 }
 
 function sendMessageToTgAndHandleBanned(arrWithObj) {
+    console.log(`Banned tickers: ${bannedTickers}`)
+
     let strToSend = ''
     for (const obj of arrWithObj) {
         if (isTickerBanned(obj.ticker)) {
@@ -110,6 +112,7 @@ function sendMessageToTgAndHandleBanned(arrWithObj) {
         }
 
         bannedTickers.add(obj.ticker)
+        console.log(`Adding ${obj.ticker} to banned`)
 
         setTimeoutToDeleteBannedTicker(obj.ticker)
 
